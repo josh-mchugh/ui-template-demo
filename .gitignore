@@ -36,6 +36,7 @@ npm-debug.log
 
 # frontend
 frontend/dist
+src/main/resources/public
 
 # misc
 .DS_Store
