@@ -1,34 +1,24 @@
 const Path = require('path');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
-const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
   entry: {
-    app: Path.resolve(__dirname, '../src/scripts/index.js')
+    main: Path.resolve(__dirname, '../src/scripts/main.js'),
+    vendor: Path.resolve(__dirname, '../src/scripts/vendor.js')
   },
   output: {
-    path: Path.join(__dirname, '../build'),
+    path: Path.join(__dirname, '../dist'),
     filename: 'js/[name].js'
   },
-  optimization: {
-    splitChunks: {
-      chunks: 'all',
-      name: false
-    }
-  },
+  optimization: {},
   plugins: [
     new CleanWebpackPlugin(),
-    new CopyWebpackPlugin([
-      { from: Path.resolve(__dirname, '../public'), to: 'public' }
-    ]),
-    new HtmlWebpackPlugin({
-      template: Path.resolve(__dirname, '../src/index.html')
-    })
   ],
   resolve: {
     alias: {
-      '~': Path.resolve(__dirname, '../src')
+      '~': Path.resolve(__dirname, '../src'),
+      'fomantic': Path.resolve(__dirname, '../fomantic/dist')
     }
   },
   module: {
