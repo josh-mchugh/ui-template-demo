@@ -29,3 +29,16 @@ build/
 
 ### VS Code ###
 .vscode/
+
+# npm
+node_modules
+npm-debug.log
+
+# frontend
+frontend/dist
+
+# misc
+.DS_Store
+
+
+
