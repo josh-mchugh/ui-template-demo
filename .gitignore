@@ -36,6 +36,7 @@ npm-debug.log
 
 # frontend
 frontend/dist
+frontend/node
 src/main/resources/public
 
 # misc
