@@ -42,5 +42,9 @@ src/main/resources/public
 # misc
 .DS_Store
 
+# demo
+demo/dist
+demo/debug.log
+
 
 
