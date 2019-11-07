@@ -18,7 +18,7 @@ module.exports = merge(common, {
     }),
     new Webpack.optimize.ModuleConcatenationPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'css/[name].css'
+      filename: '[name].css'
     })
   ],
   module: {

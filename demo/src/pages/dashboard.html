@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% block head %}
+    <title>Dashboard</title>
+{% endblock %}
+
+{% block body %}
+    <div>
+        <nav class="ui vertical menu" id="sideNav">
+            <div class="item">
+                <div class="profile-image">
+                    <img class="ui centered circular image" src="https://via.placeholder.com/150" />
+                </div>
+                <div class="profile-name">Cave Johnson</div>
+            </div>
+            <a class="item active">
+                <i class="home icon"></i>
+                Dashboard
+            </a>
+            <a class="item">
+                <i class="edit outline icon "></i>
+                Forms
+            </a>
+            <a class="item">
+                <i class="window restore outline icon"></i>
+                Modals
+            </a>
+        </nav>
+        <div class="main-container">
+            <!-- Top Navigation -->
+            <nav class="ui large secondary pointing menu" id="topNav">
+                <a class="header item" href="/">
+                    <img class="logo" src="/assets/logo.svg"/>
+                    <span class="company-name">Black Mesa</span>
+                </a>
+                <div class="right menu">
+                    <div class="item">
+                        <div class="ui icon input">
+                            <input type="text" placeholder="Search...">
+                            <i class="search link icon"></i>
+                        </div>
+                    </div>
+                    <a class="ui item">Logout</a>
+                </div>
+            </nav>
+            <div class="ui padded stackable grid">
+                <div class="one column row">
+                    <div class="column">
+                        <h1 class="ui header">Dashboard</h1>
+                    </div>
+                </div>
+                <div class="two column row">
+                    <div class="column">
+                        <div class="ui segment">
+                            <h2 class="ui header">
+                                Dashboard Widget 1
+                                <div class="sub header">Fist dashboard widget</div>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="column">
+                        <div class="ui segment">
+                            <h2 class="ui header">
+                                Dashboard Widget 2
+                                <div class="sub header">Second dashboard widget</div>
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

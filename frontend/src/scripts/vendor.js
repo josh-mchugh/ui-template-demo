@@ -1,7 +1,6 @@
-import jquery from "jquery";
+import $ from "jquery";
+window.jQuery = $;
+window.$ = $;
 
+import semantic from "fomantic/semantic.min.js";
 import "fomantic/semantic.min.css";
-import "fomantic/semantic.min.js";
-
-window.$ = jquery;
-window.jquery = jquery;

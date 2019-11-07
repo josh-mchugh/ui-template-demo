@@ -1,0 +1,19 @@
+{
+  "name": "ui-template-demo",
+  "version": "1.0.0",
+  "description": "Super simple gulp demo static page app. Purpose is for design and demo-ing",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Josh McHugh",
+  "devDependencies": {
+    "browser-sync": "^2.26.7",
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-cssbeautify": "^2.0.0",
+    "gulp-html-beautify": "^1.0.1",
+    "gulp-nunjucks-render": "^2.2.3",
+    "gulp-sass": "^4.0.2"
+  },
+  "dependencies": {}
+}
