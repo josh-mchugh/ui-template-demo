@@ -1,0 +1,19 @@
+#sourceMediumChart {
+    margin-left: 25%;
+    margin-right: 25%;
+}
+
+.widget {
+    min-height: 500px;
+
+    .segment {
+        height: 100%;
+    }
+
+    .options {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 20px 10px 0px 0px;
+    }
+}

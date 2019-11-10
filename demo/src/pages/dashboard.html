@@ -1,69 +1,233 @@
-{% extends "base.html" %}
+{% extends "page-content.html" %}
 
-{% block head %}
+{% block header %}
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <title>Dashboard</title>
 {% endblock %}
 
-{% block body %}
-    <div>
-        <nav class="ui vertical menu" id="sideNav">
-            <div class="item">
-                <div class="profile-image">
-                    <img class="ui centered circular image" src="https://via.placeholder.com/150" />
+{% block pageContent %}
+    <div class="sixteen width row">
+        <div class="column">
+            <h1 class="ui header">Dashboard</h1>
+        </div>
+    </div>
+    <div class="equal width row">
+        <div class="column">
+            <div class="ui segment">
+                <div class="ui statistics">
+                    <div class="statistic">
+                        <div class="value">
+                            4.56
+                        </div>
+                        <div class="label">
+                            Sales Today
+                        </div>
+                    </div>
                 </div>
-                <div class="profile-name">Cave Johnson</div>
             </div>
-            <a class="item active">
-                <i class="home icon"></i>
-                Dashboard
-            </a>
-            <a class="item">
-                <i class="edit outline icon "></i>
-                Forms
-            </a>
-            <a class="item">
-                <i class="window restore outline icon"></i>
-                Modals
-            </a>
-        </nav>
-        <div class="main-container">
-            <!-- Top Navigation -->
-            <nav class="ui large secondary pointing menu" id="topNav">
-                <a class="header item" href="/">
-                    <img class="logo" src="/assets/logo.svg"/>
-                    <span class="company-name">Black Mesa</span>
-                </a>
-                <div class="right menu">
-                    <div class="item">
-                        <div class="ui icon input">
-                            <input type="text" placeholder="Search...">
-                            <i class="search link icon"></i>
+        </div>
+        <div class="column">
+            <div class="ui segment">
+                <div class="ui statistics">
+                    <div class="statistic">
+                        <div class="value">
+                            27.42
+                        </div>
+                        <div class="label">
+                            Visitors Today
                         </div>
                     </div>
-                    <a class="ui item">Logout</a>
                 </div>
-            </nav>
-            <div class="ui padded stackable grid">
-                <div class="one column row">
-                    <div class="column">
-                        <h1 class="ui header">Dashboard</h1>
-                    </div>
-                </div>
-                <div class="two column row">
-                    <div class="column">
-                        <div class="ui segment">
-                            <h2 class="ui header">
-                                Dashboard Widget 1
-                                <div class="sub header">Fist dashboard widget</div>
-                            </h2>
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui segment">
+                <div class="ui statistics">
+                    <div class="statistic">
+                        <div class="value">
+                            $ 29.20
+                        </div>
+                        <div class="label">
+                            Total Earnings
                         </div>
                     </div>
-                    <div class="column">
-                        <div class="ui segment">
-                            <h2 class="ui header">
-                                Dashboard Widget 2
-                                <div class="sub header">Second dashboard widget</div>
-                            </h2>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui segment">
+                <div class="ui statistics">
+                    <div class="statistic">
+                        <div class="value">
+                            67
+                        </div>
+                        <div class="label">
+                            Total Earnings
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui segment">
+                <div class="ui statistics">
+                    <div class="statistic">
+                        <div class="value">
+                            $49.40
+                        </div>
+                        <div class="label">
+                            Total Revenue
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="eight wide column widget">
+        <div class="ui segment">
+            <div>
+                <h2 class="ui header">
+                    Calendar Widget
+                    <div class="sub header">Calendar widget that is displayed on the dashboard screen</div>
+                </h2>
+                <div class="ui divider"></div>
+                <div class="options">
+                    <i class="large ellipsis vertical link icon"></i>
+                </div>
+            </div>
+            <div class="ui calendar" id="inline_calendar"> </div>
+            <script type="text/javascript">
+                $('#inline_calendar').calendar();
+            </script>
+        </div>
+    </div>
+    <div class="eight wide column widget">
+        <div class="ui segment">
+            <div>
+                <h2 class="ui header">
+                    Source / Medium
+                    <div class="sub header">Source / Medium widget of a pie chart and table</div>
+                </h2>
+                <div class="ui divider"></div>
+                <div class="options">
+                    <i class="large ellipsis vertical link icon"></i>
+                </div>
+            </div>
+            <div id="sourceMediumChart"></div>
+            <table class="ui very basic table">
+                <thead>
+                    <tr>
+                        <th class="left aligned">Source</th>
+                        <th class="right aligned">Revenue</th>
+                        <th class="right aligned">Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td class="left aligned">Direct</td>
+                        <td class="right aligned">$2,206</td>
+                        <td class="right aligned">34%</td>
+                    </tr>
+                    <tr>
+                        <td class="left aligned">Affiliate</td>
+                        <td class="right aligned">$853</td>
+                        <td class="right aligned">15%</td>
+                    </tr>
+                    <tr>
+                        <td class="left aligned">E-mail</td>
+                        <td class="right aligned">$521</td>
+                        <td class="right aligned">22%</td>
+                    </tr>
+                    <tr>
+                        <td class="left aligned">Other</td>
+                        <td class="right aligned">$1,725</td>
+                        <td class="right aligned">18%</td>
+                    </tr>
+                </tbody>
+            </table>
+            <script type="text/javascript">
+                var options = {
+                    chart: {
+                        height: 150,
+                        width: 380,
+                        type: 'pie',
+                    },
+                    legend: {
+                        show: false
+                    },
+                    dataLabels: {
+                        enabled: false,
+                    },
+                    labels: ['Direct', 'Affiliate', 'E-mail', 'Other'],
+                    series: [34, 15, 22, 18],
+                    responsive: [{
+                        breakpoint: 480,
+                        options: {
+                            chart: {
+                                width: 200
+                            }
+                        }
+                    }]
+                };
+
+                var chart = new ApexCharts(
+                    document.querySelector("#sourceMediumChart"),
+                    options
+                );
+
+                chart.render();
+            </script>
+        </div>
+    </div>
+    <div class="eight wide column widget">
+        <div class="ui segment">
+            <div>
+                <h2 class="ui header">
+                    Messages Widget
+                    <div class="sub header">Messages widget that is displayed messages</div>
+                </h2>
+                <div class="ui divider"></div>
+                <div class="options">
+                    <i class="large ellipsis vertical link icon"></i>
+                </div>
+            </div>
+            <div class="ui divided items">
+                <div class="item">
+                    <div class="ui tiny circular image">
+                        <img src="https://randomuser.me/api/portraits/women/8.jpg"/>
+                    </div>
+                    <div class="content">
+                        <a class="header">
+                            Message from Jaidyn Montes
+                        </a>
+                        <div class="description">
+                            Please advise soonest overcome key issues to meet key milestones gain traction so shotgun approach thinking outside the box, so we're ahead of the curve on that one or screw the pooch...
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="ui tiny circular image">
+                        <img src="https://randomuser.me/api/portraits/women/82.jpg" />
+                    </div>
+                    <div class="content">
+                        <a class="header">
+                            Message from Angie Mcclain
+                        </a>
+                        <div class="description">
+                            It's about managing expectations a set of certitudes based on deductions founded on false premise but thought shower, root-and-branch review...
+                        </div>
+                    </div>
+                </div>
+                <div class="item">
+                    <div class="ui tiny circular image">
+                        <img src="https://randomuser.me/api/portraits/men/58.jpg"/>
+                    </div>
+                    <div class="content">
+                        <a class="header">
+                            Message from Danny Vazquez
+                        </a>
+                        <div class="description">
+                            Circle back what do you feel you would bring to the table if you were hired for this position, but win-win-win and circle back around yet tribal knowledge...
                         </div>
                     </div>
                 </div>
