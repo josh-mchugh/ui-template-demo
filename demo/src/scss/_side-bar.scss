@@ -1,0 +1,12 @@
+.side-bar {
+    position: fixed !important;
+    z-index: 103;
+    top: 0;
+    left: -250px;
+
+    .menu {
+       width: 250px !important;
+       height: 100vh;
+       border-radius: 0;
+    }
+}

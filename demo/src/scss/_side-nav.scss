@@ -1,12 +1,25 @@
-#sideNav {
+.side-nav {
     position: fixed;
-    width:250px;
+    width:250px !important;
     height: 100vh;
-    padding-top: 20px;
-    border-radius: 0em;
+    border-radius: 0 !important;
+    overflow: auto;
+}
 
+.side-nav-items {
     .profile-name {
         text-align: center;
         padding: 24px 0px 15px 0px;
     }
+}
+
+@media screen and (max-width: 700px) {
+
+    .side-nav {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 400px) {
+
 }

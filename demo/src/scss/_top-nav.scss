@@ -1,6 +1,28 @@
 #topNav {
 
-    .company-name {
-        padding-left: 10px;
+    .company-banner {
+        width: 250px;
+        .company-name {
+            padding-left: 10px;
+        }
+    }
+
+    .hamburger {
+        display: none;
+    }
+
+    @media screen and (max-width: 700px) {
+      .company-banner {
+        width: auto;
+      }
+      .hamburger {
+        display: inline-block;
+      }
+    }
+
+    @media screen and (max-width: 500px) {
+      .company-name {
+          display: none;
+        }
     }
 }
