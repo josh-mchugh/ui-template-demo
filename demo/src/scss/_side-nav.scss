@@ -6,6 +6,16 @@
     overflow: auto;
 }
 
+.side-nav-icons {
+    position: fixed;
+    display: none !important;
+    width:50px !important;
+    height: 100vh;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    overflow: auto;
+}
+
 .side-nav-items {
     .profile-name {
         text-align: center;
@@ -13,10 +23,21 @@
     }
 }
 
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 967px) {
 
     .side-nav {
-        display: none;
+        display: none !important;
+    }
+
+    .side-nav-icons {
+        display: block !important;
+    }
+}
+
+@media screen and (max-width: 767px) {
+
+    .side-nav-icons {
+        display: none !important;
     }
 }
 

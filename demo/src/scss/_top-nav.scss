@@ -11,18 +11,23 @@
         display: none;
     }
 
-    @media screen and (max-width: 700px) {
+
+    @media screen and (max-width: 967px) {
       .company-banner {
-        width: auto;
-      }
-      .hamburger {
-        display: inline-block;
+          width: 50px;
+          .logo {
+            margin-left: -5px;
+            width: 24px;
+          }
+          .company-name {
+              display: none;
+          }
       }
     }
 
-    @media screen and (max-width: 500px) {
-      .company-name {
-          display: none;
-        }
+    @media screen and (max-width: 767px) {
+      .hamburger {
+        display: inline-block;
+      }
     }
 }
