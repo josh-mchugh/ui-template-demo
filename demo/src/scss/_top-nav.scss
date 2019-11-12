@@ -1,4 +1,4 @@
-#topNav {
+.top-nav {
 
     .company-banner {
         width: 250px;
@@ -8,7 +8,7 @@
     }
 
     .hamburger {
-        display: none;
+        display: none !important;
     }
 
 
@@ -16,18 +16,21 @@
       .company-banner {
           width: 50px;
           .logo {
-            margin-left: -5px;
-            width: 24px;
+            margin-left: -5px !important;
+            width: 24px !important;
           }
           .company-name {
-              display: none;
+              display: none !important;
           }
       }
     }
 
     @media screen and (max-width: 767px) {
+      .company-banner {
+        display: none !important;
+      }
       .hamburger {
-        display: inline-block;
+        display: inline-block !important;
       }
     }
 }
