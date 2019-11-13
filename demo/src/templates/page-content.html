@@ -2,7 +2,7 @@
 
 {% block body %}
     <div class="side-bar">
-        <div class="ui inverted left vertical menu">
+        <div class="ui inverted left vertical menu side-bar-menu">
             {% include "partials/left-nav-items.html" %}
         </div>
     </div>
@@ -16,6 +16,12 @@
         </a>
         <div class="right menu">
             <div class="item">
+                <div class="ui toggle checkbox" id="darkModeToggle">
+                    <input type="checkbox" />
+                </div>
+                Dark Mode
+            </div>
+            <div class="item">
                 <div class="ui icon input">
                     <input type="text" placeholder="Search...">
                     <i class="search link icon"></i>
@@ -27,7 +33,7 @@
     <nav class="ui left vertical menu side-nav">
         {% include "partials/left-nav-items.html" %}
     </nav>
-    <div class="main-container">
+    <div class="ui main-container">
         <div class="ui padded stackable grid">
             {% block pageContent %}
             {% endblock %}
@@ -51,6 +57,36 @@
 
                $("body").prepend(dimmer);
                $(".side-bar").animate({left: "0px"}, 250);
+            });
+        });
+    </script>
+    <!-- Dark Mode Toggle -->
+    <script type="text/javascript">
+        $(function() {
+
+            var invertableClasses = [
+                    "body",
+                    ".ui.button",
+                    ".ui.buttons",
+                    ".ui.form",
+                    ".ui.header",
+                    ".ui.items",
+                    ".ui.main-container",
+                    ".ui.menu:not(.side-bar-menu)",
+                    ".ui.modal",
+                    ".ui.statistic",
+                    ".ui.table",
+                    ".ui.segment"
+                ];
+
+
+            $("#darkModeToggle").checkbox({
+                onChecked: function() {
+                    $(invertableClasses.join()).addClass("inverted");
+                },
+                onUnchecked: function() {
+                    $(invertableClasses.join()).removeClass("inverted");
+                }
             });
         });
     </script>

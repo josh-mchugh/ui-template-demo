@@ -1,15 +1,22 @@
-.main-container {
-    height: 100vh;
-    margin-top: 54px;
-    margin-left:250px;
-    padding: 15px;
-    background-color: #fcfcfc;
+.ui {
+    &.main-container {
+        height: 100%;
+        margin-top: 54px !important;
+        margin-left:250px !important;
+        padding: 15px;
+        background-color: #fcfcfc;
 
-    @media screen and (max-width: 992px) {
-        margin-left: 50px;
-    }
+        &.inverted {
+            background: #333;
+            color: rgba(255,255,255,.9);
+        }
 
-    @media screen and (max-width: 768px) {
-        margin-left: 0;
+        @media screen and (max-width: 992px) {
+            margin-left: 50px !important;
+        }
+
+        @media screen and (max-width: 768px) {
+            margin-left: 0 !important;
+        }
     }
 }
