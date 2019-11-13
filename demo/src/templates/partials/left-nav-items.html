@@ -5,19 +5,19 @@
         </div>
         <div class="name">Cave Johnson</div>
     </div>
-    <a class="item active" href="/pages/dashboard.html">
+    <a class="item {% if activeNav === 'dashboard' %} active {% endif %}" href="/pages/dashboard.html">
         <i class="home icon"></i>
         <span class="name">Dashboard</span>
     </a>
-    <a class="item" href="/pages/forms.html">
+    <a class="item {% if activeNav === 'forms' %} active {% endif %}" href="/pages/forms.html">
         <i class="edit outline icon "></i>
         <span class="name">Forms</span>
     </a>
-    <a class="item" href="/pages/modals.html">
+    <a class="item {% if activeNav === 'modals' %} active {% endif %}" href="/pages/modals.html">
         <i class="window restore outline icon"></i>
         <span class="name">Modals</span>
     </a>
-    <a class="item">
+    <a class="item {% if activeNav === 'tables' %} active {% endif %}" href="/pages/tables.html">
         <i class="table icon"></i>
         <span class="name">Tables</span>
     </a>
