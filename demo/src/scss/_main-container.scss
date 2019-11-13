@@ -4,21 +4,12 @@
     margin-left:250px;
     padding: 15px;
     background-color: #fcfcfc;
-}
 
-@media screen and (max-width: 967px) {
-    .main-container {
+    @media screen and (max-width: 992px) {
         margin-left: 50px;
     }
-}
 
-@media screen and (max-width: 767px) {
-
-   .main-container {
+    @media screen and (max-width: 768px) {
         margin-left: 0;
-   }
-}
-
-@media screen and (max-width: 400px) {
-
+    }
 }

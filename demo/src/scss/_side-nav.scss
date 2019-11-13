@@ -14,11 +14,8 @@
             }
         }
     }
-}
 
-@media screen and (max-width: 967px) {
-
-    .side-nav {
+    @media screen and (max-width: 992px) {
         width: 50px !important;
         margin-top: -6px !important;
 
@@ -42,15 +39,10 @@
             }
         }
     }
-}
 
-@media screen and (max-width: 767px) {
-
-    .side-nav {
+    @media screen and (max-width: 768px) {
         display: none !important;
     }
 }
 
-@media screen and (max-width: 400px) {
 
-}
