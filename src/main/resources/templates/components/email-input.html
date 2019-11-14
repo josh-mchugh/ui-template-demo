@@ -2,7 +2,7 @@
 <body th:fragment="component (fieldName)"
       th:with="label=${label} ?: '', placeholder=${placeholder} ?: '', icon=${icon} ?: '', value=${value} ?: ''">
 
-    <div class="field">
+    <div th:class="${#fields.hasErrors('__${fieldName}__')} ? 'field error' : 'field'">
         <th:block th:if="${!#strings.isEmpty(label)}">
             <label>[[${label}]]</label>
         </th:block>
@@ -10,8 +10,11 @@
             <th:block th:if="${!#strings.isEmpty(icon)}">
                 <i th:class="${icon}" th:classappend="icon"></i>
             </th:block>
-            <input type="text" th:name="${fieldName}" th:placeholder="${placeholder}" th:value="${value}">
+            <input type="email" th:name="${fieldName}" th:placeholder="${placeholder}" th:value="*{__${fieldName}__}">
         </div>
+        <th:block th:if="${#fields.hasErrors('__${fieldName}__')}">
+            <p class="error" th:errors="*{__${fieldName}__}"></p>
+        </th:block>
     </div>
 
 </body>
