@@ -18,18 +18,8 @@
                     </h2>
                     <form class="ui large form">
                         <div class="ui stacked segment">
-                            <div class="field">
-                                <div class="ui left icon input">
-                                    <i class="user icon"></i>
-                                    <input type="text" name="email" placeholder="E-mail address">
-                                </div>
-                            </div>
-                            <div class="field">
-                                <div class="ui left icon input">
-                                    <i class="lock icon"></i>
-                                    <input type="password" name="password" placeholder="Password">
-                                </div>
-                            </div>
+                            <div th:replace="components/email-input :: component (fieldName='email', placeholder='E-mail address', icon='user')"></div>
+                            <div th:replace="components/password-input :: component (fieldName='password', placeholder='Password', icon='lock')"></div>
                             <a class="ui fluid large submit button" href="/pages/dashboard.html">Login</a>
                         </div>
                     </form>
