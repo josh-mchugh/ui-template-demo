@@ -13,6 +13,11 @@ gulp.task("webpack", function() {
     .pipe(gulp.dest("dist/"));
 });
 
+gulp.task("assets", function() {
+    return gulp.src("./src/assets/**/*")
+        .pipe(gulp.dest("dist/assets"));
+});
+
 gulp.task("copy", function() {
     return gulp.src("./dist/**")
         .pipe(gulp.dest("../src/main/resources/public"));
@@ -21,5 +26,6 @@ gulp.task("copy", function() {
 gulp.task("build", gulp.series(
     "clean",
     "webpack",
+    "assets",
     "copy"
 ));
