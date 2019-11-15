@@ -1,6 +1,6 @@
-package com.example.demo.controller;
+package com.example.demo.controller.login;
 
-import com.example.demo.controller.model.LoginForm;
+import com.example.demo.controller.login.model.LoginForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,7 +20,7 @@ public class LoginController {
 
         model.addAttribute("form", new LoginForm());
 
-        return "login/login";
+        return "login/view-login";
     }
 
     @PostMapping("/")
@@ -28,7 +28,7 @@ public class LoginController {
 
         if(results.hasErrors()) {
 
-            return "login/login";
+            return "login/view-login";
         }
 
         return "redirect:/dashboard";

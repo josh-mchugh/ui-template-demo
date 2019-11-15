@@ -1,0 +1,36 @@
+.top-nav {
+
+    .company-banner {
+        width: 250px;
+        .company-name {
+            padding-left: 10px;
+        }
+    }
+
+    .hamburger {
+        display: none !important;
+    }
+
+
+    @media screen and (max-width: 992px) {
+      .company-banner {
+          width: 50px;
+          .logo {
+            margin-left: -5px !important;
+            width: 24px !important;
+          }
+          .company-name {
+              display: none !important;
+          }
+      }
+    }
+
+    @media screen and (max-width: 768px) {
+      .company-banner {
+        display: none !important;
+      }
+      .hamburger {
+        display: inline-block !important;
+      }
+    }
+}

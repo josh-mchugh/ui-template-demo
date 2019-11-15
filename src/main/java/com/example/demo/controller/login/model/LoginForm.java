@@ -1,4 +1,4 @@
-package com.example.demo.controller.model;
+package com.example.demo.controller.login.model;
 
 import lombok.Data;
 

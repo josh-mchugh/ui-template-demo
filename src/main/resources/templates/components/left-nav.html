@@ -1,0 +1,19 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body th:fragment="leftNav">
+
+    <div class="side-nav-items">
+        <div class="item profile">
+            <div class="profile-image">
+                <img class="ui centered circular image" src="https://via.placeholder.com/150" />
+            </div>
+            <div class="name">Cave Johnson</div>
+        </div>
+        <th:block th:each="item : ${menus}">
+            <a class="item" th:classappend="${item.active} ? 'active' : ''" th:href="@{__${item.url}__}">
+                <i th:class="${item.icon}" th:classappend="icon"></i>
+                <span class="name">[[${item.name}]]</span>
+            </a>
+        </th:block>
+    </div>
+
+</body>

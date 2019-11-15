@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout/app-base}">
+    <head>
+        <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+        <title>Dashboard</title>
+    </head>
+    <body layout:fragment="main-content">
+        <div class="sixteen wide column">
+            <h1 class="ui header">Dashboard</h1>
+        </div>
+        <div class="four wide column">
+            <div class="ui segment">
+                <div class="ui small statistic">
+                    <div class="value">4.56</div>
+                    <div class="label">Sales Today</div>
+                </div>
+            </div>
+        </div>
+        <div class="four wide column">
+            <div class="ui segment">
+                <div class="ui small statistic">
+                    <div class="value">$29.20</div>
+                    <div class="label">Total Earnings</div>
+                </div>
+            </div>
+        </div>
+        <div class="four wide column">
+            <div class="ui segment">
+                <div class="ui small statistic">
+                    <div class="value">67</div>
+                    <div class="label">Total Earnings</div>
+                </div>
+            </div>
+        </div>
+        <div class="four wide column">
+            <div class="ui segment">
+                <div class="ui small statistic">
+                    <div class="value">$49.40</div>
+                    <div class="label">Total Revenue</div>
+                </div>
+            </div>
+        </div>
+        <div class="eight wide column widget">
+            <div class="ui segment">
+                <div>
+                    <h2 class="ui header">
+                        Calendar Widget
+                        <div class="sub header">Calendar widget that is displayed on the dashboard screen</div>
+                    </h2>
+                    <div class="ui divider"></div>
+                    <div class="options">
+                        <i class="large ellipsis vertical link icon"></i>
+                    </div>
+                </div>
+                <div class="ui calendar" id="inline_calendar"> </div>
+                <script type="text/javascript">
+                    $('#inline_calendar').calendar();
+                </script>
+            </div>
+        </div>
+        <div class="eight wide column widget">
+            <div class="ui segment">
+                <div>
+                    <h2 class="ui header">
+                        Source / Medium
+                        <div class="sub header">Source / Medium widget of a pie chart and table</div>
+                    </h2>
+                    <div class="ui divider"></div>
+                    <div class="options">
+                        <i class="large ellipsis vertical link icon"></i>
+                    </div>
+                </div>
+                <div id="sourceMediumChart"></div>
+                <script type="text/javascript">
+                    var options = {
+                        chart: {
+                            width: "100%",
+                            type: 'pie',
+                        },
+                        labels: ['Direct', 'Affiliate', 'E-mail', 'Other'],
+                        series: [34, 15, 22, 18],
+                        responsive: [{
+                            breakpoint: 480,
+                            options: {
+                                chart: {
+                                    width: 200
+                                },
+                                legend: {
+                                    position: "bottom"
+                                }
+                            }
+                        }]
+                    };
+
+                    var chart = new ApexCharts(
+                        document.querySelector("#sourceMediumChart"),
+                        options
+                    );
+
+                    chart.render();
+                </script>
+            </div>
+        </div>
+        <div class="eight wide column widget">
+            <div class="ui segment">
+                <div>
+                    <h2 class="ui header">
+                        Messages Widget
+                        <div class="sub header">Messages widget that is displayed messages</div>
+                    </h2>
+                    <div class="ui divider"></div>
+                    <div class="options">
+                        <i class="large ellipsis vertical link icon"></i>
+                    </div>
+                </div>
+                <div class="ui divided items">
+                    <div class="item">
+                        <div class="ui tiny circular image">
+                            <img src="https://randomuser.me/api/portraits/women/8.jpg"/>
+                        </div>
+                        <div class="content">
+                            <a class="header">
+                                Message from Jaidyn Montes
+                            </a>
+                            <div class="description">
+                                Please advise soonest overcome key issues to meet key milestones gain traction so shotgun approach thinking outside the box, so we're ahead of the curve on that one or screw the pooch...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="ui tiny circular image">
+                            <img src="https://randomuser.me/api/portraits/women/82.jpg" />
+                        </div>
+                        <div class="content">
+                            <a class="header">
+                                Message from Angie Mcclain
+                            </a>
+                            <div class="description">
+                                It's about managing expectations a set of certitudes based on deductions founded on false premise but thought shower, root-and-branch review...
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="ui tiny circular image">
+                            <img src="https://randomuser.me/api/portraits/men/58.jpg"/>
+                        </div>
+                        <div class="content">
+                            <a class="header">
+                                Message from Danny Vazquez
+                            </a>
+                            <div class="description">
+                                Circle back what do you feel you would bring to the table if you were hired for this position, but win-win-win and circle back around yet tribal knowledge...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
