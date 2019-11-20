@@ -30,16 +30,10 @@
                                 <div class="ui divider"></div>
                                 <div class="ui list">
                                     <div class="item">
-                                        <div class="ui checkbox">
-                                            <input type="checkbox" />
-                                            <label>Active</label>
-                                        </div>
+                                        <div th:replace="components/checkbox :: component (fieldName='active', label='Active')"></div>
                                     </div>
                                     <div class="item">
-                                        <div class="ui checkbox">
-                                            <input type="checkbox" />
-                                            <label>Inactive</label>
-                                        </div>
+                                        <div th:replace="components/checkbox :: component (fieldName='inactive', label='Inactive')"></div>
                                     </div>
                                 </div>
                             </div>

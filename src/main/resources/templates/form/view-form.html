@@ -27,12 +27,7 @@
                             <label>Text</label>
                             <textarea></textarea>
                         </div>
-                        <div class="field">
-                            <div class="ui checkbox">
-                                <input type="checkbox" tabindex="0" class="hidden">
-                                <label>I agree to to the Terms and Conditions</label>
-                            </div>
-                        </div>
+                        <div th:replace="components/checkbox :: component (fieldName='terms', label='I agree to to the Terms and Conditions')"></div>
                         <div class="field">
                             <label>Single Select</label>
                             <select class="ui dropdown">
@@ -280,7 +275,6 @@
         </div>
         <script type="text/javascript">
             $(function() {
-                $(".ui.checkbox").checkbox();
                 $(".ui.dropdown").dropdown();
             });
         </script>

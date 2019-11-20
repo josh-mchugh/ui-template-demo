@@ -8,5 +8,5 @@ public class BasicExampleForm {
     private String email;
     private String password;
     private String textArea;
-    private boolean checkbox;
+    private boolean terms;
 }
