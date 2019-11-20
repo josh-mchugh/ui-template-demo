@@ -25,10 +25,9 @@
                     Dark Mode
                 </div>
                 <div class="item">
-                    <div class="ui icon input">
-                        <input type="text" placeholder="Search...">
-                        <i class="search link icon"></i>
-                    </div>
+                    <form th:object="${topNavForm}">
+                        <div th:replace="components/text-input :: component (fieldName='search', placeholder='Search...', icon='search')"></div>
+                    </form>
                 </div>
                 <a class="ui item" href="/">Logout</a>
             </div>

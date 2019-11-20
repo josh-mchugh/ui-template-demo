@@ -20,14 +20,10 @@
                     <div class="ui divider"></div>
                 </div>
                 <div class="table content">
-                    <div class="ui form">
+                    <div class="ui form" th:object="${tableFilterForm}">
                         <div class="filters">
                             <div class="field">
-                                <label>Search</label>
-                                <div class="ui icon input">
-                                    <input type="text" placeholder="Search...">
-                                    <i class="search icon"></i>
-                                </div>
+                                <div th:replace="components/text-input :: component (fieldName='filterQuery', label='Search', placeholder='Search...', icon='search')"></div>
                             </div>
                             <div class="field">
                                 <label>Status</label>

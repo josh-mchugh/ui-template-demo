@@ -20,15 +20,9 @@
                     <div class="ui divider"></div>
                 </div>
                 <div class="content">
-                    <form class="ui form">
-                        <div class="field">
-                            <label>Email</label>
-                            <input type="email" placeholder="Email Address...">
-                        </div>
-                        <div class="field">
-                            <label>Password</label>
-                            <input type="password" placeholder="Password...">
-                        </div>
+                    <form class="ui form" th:object="${basicExampleForm}">
+                        <div th:replace="components/text-input :: component (fieldName='email', type='email', label='Email', placeholder='Email Address...')"></div>
+                        <div th:replace="components/text-input :: component (fieldName='password', type='password', label='Password', placeholder='Password...')"></div>
                         <div class="field">
                             <label>Text</label>
                             <textarea></textarea>
@@ -135,44 +129,20 @@
                     <div class="ui divider"></div>
                 </div>
                 <div class="content">
-                    <form class="ui form">
-                        <div class="field">
-                            <label>Username</label>
-                            <input type="text" placeholder="Username...">
-                        </div>
+                    <form class="ui form" th:object="${rowExampleForm}">
+                        <div th:replace="components/text-input :: component (fieldName='username', label='Username', placeholder='Username...')"></div>
                         <div class="three fields">
-                            <div class="field">
-                                <label>First Name</label>
-                                <input type="text" placeholder="First Name..."/>
-                            </div>
-                            <div class="field">
-                                <label>Middle Name</label>
-                                <input type="text" placeholder="Middle Name...">
-                            </div>
-                            <div class="field">
-                                <label>Last Name</label>
-                                <input type="text" placeholder="Last Name..." />
-                            </div>
+                            <div th:replace="components/text-input :: component (fieldName='firstName', label='First Name', placeholder='First Name...')"></div>
+                            <div th:replace="components/text-input :: component (fieldName='middleName', label='Middle Name', placeholder='Middle Name...')"></div>
+                            <div th:replace="components/text-input :: component (fieldName='lastName', label='Last Name', placeholder='Last Name...')"></div>
                         </div>
                         <div class="two fields">
-                            <div class="field">
-                                <label>Email</label>
-                                <input type="email" placeholder="Email..." />
-                            </div>
-                            <div class="field">
-                                <label>Confirm Email</label>
-                                <input type="email" placeholder="Confirm Email..."/>
-                            </div>
+                            <div th:replace="components/text-input :: component (fieldName='email', type='email', label='Email', placeholder='Email...')"></div>
+                            <div th:replace="components/text-input :: component (fieldName='confirmEmail', type='email', label='Confirm Email', placeholder='Confirm Email...')"></div>
                         </div>
                         <div class="two fields">
-                            <div class="field">
-                                <label>Password</label>
-                                <input type="password" placeholder="Password..." />
-                            </div>
-                            <div class="field">
-                                <label>Confirm Password</label>
-                                <input type="password" placeholder="Confirm Password..." />
-                            </div>
+                            <div th:replace="components/text-input :: component (fieldName='password', type='password', label='Password', placeholder='Password...')"></div>
+                            <div th:replace="components/text-input :: component (fieldName='password', type='password', label='Confirm Password', placeholder='Confirm Password...')"></div>
                         </div>
                         <button class="ui right floated primary button">Register</button>
                     </form>
@@ -189,16 +159,10 @@
                     <div class="ui divider"></div>
                 </div>
                 <div class="content">
-                    <form class="ui form">
+                    <form class="ui form" th:object="${inlineExampleForm}">
                         <div class="inline fields">
-                            <div class="field">
-                                <label>Username</label>
-                                <input type="text" placeholder="Username" />
-                            </div>
-                            <div class="field">
-                                <label>Password</label>
-                                <input type="text" placeholder="Password" />
-                            </div>
+                            <div th:replace="components/text-input :: component (fieldName='username', label='Username', placeholder='Username...')"></div>
+                            <div th:replace="components/text-input :: component (fieldName='password', type='password', label='Password', placeholder='Password...')"></div>
                             <button class="ui right floated primary button">Login</button>
                         </div>
                     </form>
@@ -215,38 +179,14 @@
                     <div class="ui divider"></div>
                 </div>
                 <div class="content">
-                    <form class="ui form">
+                    <form class="ui form" th:object="${iconExampleForm}">
                         <div class="two fields">
-                            <div class="field">
-                                <label>Icon Input</label>
-                                <div class="ui icon input">
-                                    <input type="text" placeholder="Search" />
-                                    <i class="search icon"></i>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <label>Left Icon Input</label>
-                                <div class="ui left icon input">
-                                    <input type="text" placeholder="Search" />
-                                    <i class="search icon"></i>
-                                </div>
-                            </div>
+                            <div th:replace="components/text-input :: component (fieldName='search', label='Left Search Icon', icon='search', iconPosition='left', placeholder='Search...')"></div>
+                            <div th:replace="components/text-input :: component (fieldName='search', label='Right Search Icon', icon='search', iconPosition='right', placeholder='Search...')"></div>
                         </div>
                         <div class="two fields">
-                            <div class="field">
-                                <label>Loading Input</label>
-                                <div class="ui icon input loading">
-                                    <input type="text" placeholder="Search..." />
-                                    <i class="search icon"></i>
-                                </div>
-                            </div>
-                            <div class="field">
-                                <label>Left Loading Input</label>
-                                <div class="ui left icon input loading">
-                                    <input type="text" placeholder="Search..." />
-                                    <i class="search icon"></i>
-                                </div>
-                            </div>
+                            <div th:replace="components/text-input :: component (fieldName='search', label='Left Animated Loading Icon', icon='search', iconPosition='left', placeholder='Search...', loading=true)"></div>
+                            <div th:replace="components/text-input :: component (fieldName='search', label='Right Animated Loading Icon', icon='search', iconPosition='right', placeholder='Search...', loading=true)"></div>
                         </div>
                         <div>
                             <h3 class="ui dividing header">
@@ -282,15 +222,9 @@
                     <div class="ui divider"></div>
                 </div>
                 <div class="content">
-                    <form class="ui form">
-                        <div class="required field">
-                            <label>Username</label>
-                            <input type="text" placeholder="Username..." />
-                        </div>
-                        <div class="required field">
-                            <label>Password</label>
-                            <input type="password" placeholder="Password..." />
-                        </div>
+                    <form class="ui form" th:object="${requiredExampleForm}">
+                        <div th:replace="components/text-input :: component (fieldName='username', label='Username', placeholder='Username...', required=true)"></div>
+                        <div th:replace="components/text-input :: component (fieldName='password', type='password', label='Password', placeholder='Password...', required=true)"></div>
                         <button class="ui right floated primary button">Login</button>
                     </form>
                 </div>
@@ -306,17 +240,9 @@
                     <div class="ui divider"></div>
                 </div>
                 <div class="content">
-                    <form class="ui form">
-                        <div class="field error">
-                            <label>Username</label>
-                            <input type="text" placeholder="Username..." />
-                            <p class="error">Email or password is invalid</p>
-                        </div>
-                        <div class="field error">
-                            <label>Password</label>
-                            <input type="password" placeholder="Password..." />
-                            <p class="error">Email or password is invalid</p>
-                        </div>
+                    <form class="ui form" th:object="${errorExampleForm}">
+                        <div th:replace="components/text-input :: component (fieldName='errorUsername', label='Username', placeholder='Username...', required=true)"></div>
+                        <div th:replace="components/text-input :: component (fieldName='errorPassword', type='password', label='Password', placeholder='Password...', required=true)"></div>
                         <button class="ui right floated primary button">Login</button>
                     </form>
                 </div>
@@ -331,15 +257,9 @@
                     </h2>
                     <div class="divider"></div>
                 </div>
-                <form class="ui form">
-                    <div class="disabled field">
-                        <label>First Name</label>
-                        <input type="text" disabled tabindex="-1" placeholder="First Name"/>
-                    </div>
-                    <div class="disabled field">
-                        <label>Last Name</label>
-                        <input type="text" disabled tabindex="-1" placeholder="Last Name"/>
-                    </div>
+                <form class="ui form" th:object="${disabledExampleForm}">
+                    <div th:replace="components/text-input :: component (fieldName='firstName', label='First Name', placeholder='First Name...', disabled=true)"></div>
+                    <div th:replace="components/text-input :: component (fieldName='lastName', label='Last Name', placeholder='Last Name...', disabled=true)"></div>
                 </form>
             </div>
         </div>
@@ -352,15 +272,9 @@
                     </h2>
                     <div class="ui divider"></div>
                 </div>
-                <form class="ui form">
-                    <div class="field">
-                        <label>First Name</label>
-                        <input type="text" readonly placeholder="First Name" />
-                    </div>
-                    <div class="field">
-                        <label>Last Name</label>
-                        <input type="text" readonly placeholder="Last Name" />
-                    </div>
+                <form class="ui form" th:object="${readOnlyExampleForm}">
+                    <div th:replace="components/text-input :: component (fieldName='firstName', label='First Name', placeholder='First Name...', readonly=true)"></div>
+                    <div th:replace="components/text-input :: component (fieldName='firstName', label='First Name', placeholder='First Name...', readonly=true)"></div>
                 </form>
             </div>
         </div>

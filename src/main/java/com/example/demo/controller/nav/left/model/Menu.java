@@ -1,4 +1,4 @@
-package com.example.demo.controller.menu.model;
+package com.example.demo.controller.nav.left.model;
 
 import lombok.Builder;
 import lombok.Value;

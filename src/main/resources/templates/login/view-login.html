@@ -18,8 +18,8 @@
                     </h2>
                     <form class="ui large form" method="POST" action="/" th:object="${form}">
                         <div class="ui stacked segment">
-                            <div th:replace="components/email-input :: component (fieldName='email', placeholder='E-mail address', icon='user')"></div>
-                            <div th:replace="components/password-input :: component (fieldName='password', placeholder='Password', icon='lock')"></div>
+                            <div th:replace="components/text-input :: component (fieldName='email', type='email', placeholder='E-mail address', icon='user', iconPosition='left')"></div>
+                            <div th:replace="components/text-input :: component (fieldName='password', type='password', placeholder='Password', icon='lock', iconPosition='left')"></div>
                             <button class="ui fluid large submit button">Login</button>
                         </div>
                     </form>

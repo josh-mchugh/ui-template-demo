@@ -1,6 +1,6 @@
-package com.example.demo.controller.menu;
+package com.example.demo.controller.nav.left;
 
-import com.example.demo.controller.menu.model.Menu;
+import com.example.demo.controller.nav.left.model.Menu;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ControllerAdvice;

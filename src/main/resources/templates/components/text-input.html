@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body th:fragment="component (fieldName)"
+      th:with="label=${label} ?: '',
+               placeholder=${placeholder} ?: '',
+               icon=${icon} ?: '',
+               iconPosition=${iconPosition} ?: '',
+               value=${value} ?: '',
+               type=${type} ?: 'text',
+               loading=${loading} ?: false,
+               required=${required} ?: false,
+               disabled=${disabled} ?: false,
+               readonly=${readonly} ?: false,
+               hasErrors=${#fields.hasErrors('__${fieldName}__')}"
+>
+
+    <div th:class="'__${disabled ? 'disabled' : ''}__ __${required ? 'required' : ''}__ field __${hasErrors ? 'error' : ''}__'">
+        <th:block th:if="${!#strings.isEmpty(label)}">
+            <label>[[${label}]]</label>
+        </th:block>
+        <div th:class="'ui __${iconPosition}__ __${!#strings.isEmpty(icon) ? 'icon' : ''}__ input __${loading ? 'loading' : ''}__'">
+            <th:block th:if="${!#strings.isEmpty(icon)}">
+                <i th:class="'__${icon}__ icon'"></i>
+            </th:block>
+            <input th:type="${type}" th:placeholder="${placeholder}" th:field="*{__${fieldName}__}" th:readonly="${readonly}" th:disabled="${disabled}" th:tabindex="${disabled} ? -1 : 0">
+        </div>
+        <th:block th:if="${hasErrors}">
+            <p class="error" th:errors="*{__${fieldName}__}"></p>
+        </th:block>
+    </div>
+
+</body>
