@@ -1,14 +1,23 @@
 
 ####Todo
-1. Button Component
-2. Header Component
-3. Fix bug in well
-4. Create Well Component
-5. Modal Component
-6. Universal Modal Submission/Validation
-7. Universal Modal Response Messages / Redirects
-8. Pageable Object example
-9. Table Components
-10. Update fomantic
-11. demo needs implementation of fomantic
-12. Automation needs copy of demo styles not fomantic npm install
+1. [ ] Button Component
+1. [ ] Header Component
+1. [ ] Error Message Component
+1. [ ] Create Well Component
+   1. [ ] Build component
+   1. [ ] Fix bug with button floats
+1. [ ] Modal Component
+   1. [ ] Build Component
+   1. [ ] Universal submission / validation
+   1. [ ] Universal Response messages / redirects
+1. [ ] Toaster Component
+1. [ ] Table Component
+   1. [ ] Generic Pageable Object Response
+   1. [ ] Pagination components
+   1. [ ] Table components
+   1. [ ] Universal Table sorting and pagination
+1. [ ] Update fomantic
+   1. [ ] Add latest npm fomantic to demo
+   1. [ ] Remove npm fomantic from frontend build
+   1. [ ] Move custom SCSS into fomantic demo site theme
+   1. [ ] Process to move demo compiled CSS to frontend project 
