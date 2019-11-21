@@ -1,0 +1,22 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body th:fragment="component (fieldName)"
+      th:with="label=${label} ?: '',
+               value=${value} ?: '',
+               rows=${rows} ?: '',
+               required=${required} ?: false,
+               disabled=${disabled} ?: false,
+               readonly=${readonly} ?: false,
+               hasErrors=${#fields.hasErrors('__${fieldName}__')}"
+>
+
+    <div th:class="'__${required ? 'required' : ''}__ field __${hasErrors ? 'error' : ''}__'">
+        <th:block th:if="${!#strings.isEmpty(label)}">
+            <label th:for="${label}">[[${label}]]</label>
+        </th:block>
+        <textarea th:id="${fieldName}" th:name="${fieldName}" th:rows="${rows}" th:readonly="${readonly}" th:disabled="${disabled}" th:tabindex="${disabled ? '-1' : '0'}">[[${value}]]</textarea>
+        <th:block th:if="${hasErrors}">
+            <p class="error" th:errors="*{__${fieldName}__}"></p>
+        </th:block>
+    </div>
+
+</body>

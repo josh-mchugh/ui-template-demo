@@ -16,6 +16,9 @@
                 <label th:for="${label}">[[${label}]]</label>
             </th:block>
         </div>
+        <th:block th:if="${hasErrors}">
+            <p class="error" th:errors="*{__${fieldName}__}"></p>
+        </th:block>
     </div>
     <script type="text/javascript">
         $("input[type='checkbox'][name='[[${fieldName}]]']").parent().checkbox();

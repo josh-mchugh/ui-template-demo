@@ -23,10 +23,7 @@
                     <form class="ui form" th:object="${basicExampleForm}">
                         <div th:replace="components/text-input :: component (fieldName='email', type='email', label='Email', placeholder='Email Address...')"></div>
                         <div th:replace="components/text-input :: component (fieldName='password', type='password', label='Password', placeholder='Password...')"></div>
-                        <div class="field">
-                            <label>Text</label>
-                            <textarea></textarea>
-                        </div>
+                        <div th:replace="components/textarea :: component (fieldName='textArea', label='Text Area', value='This is a text area')"></div>
                         <div th:replace="components/checkbox :: component (fieldName='terms', label='I agree to to the Terms and Conditions')"></div>
                         <div class="field">
                             <label>Single Select</label>
