@@ -1,0 +1,37 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body th:fragment="component (fieldName)"
+      th:with="label=${label} ?: '',
+               value=${value} ?: '',
+               options=${options} ?: null,
+               defaultText=${defaultText} ?: '',
+               search=${search} ?: false,
+               multiple=${multiple} ?: false,
+               clearable=${clearable} ?: false,
+               required=${required} ?: false,
+               disabled=${disabled} ?: false,
+               hasErrors=${#fields.hasErrors('__${fieldName}__')}"
+>
+
+    <div th:class="'__${required ? 'required' : ''}__ field __${hasErrors ? 'error' : ''}__'">
+        <th:block th:if="${!#strings.isEmpty(label)}">
+            <label>[[${label}]]</label>
+        </th:block>
+        <div th:class="'ui __${search ? 'search' : ''}__ __${multiple ? 'multiple' : ''}__ __${clearable ? 'clearable' : ''}__ __${disabled ? 'disabled' : ''}__ selection dropdown'">
+            <input type="hidden" th:field="*{__${fieldName}__}" />
+            <i class="dropdown icon"></i>
+            <div class="default text">[[${defaultText}]]</div>
+            <div class="menu">
+                <th:block th:each="entry : ${options}">
+                    <div class="item" th:data-value="${entry.key}">[[${entry.value}]]</div>
+                </th:block>
+            </div>
+            <th:block th:if="${hasErrors}">
+                <p class="error" th:errors="*{__${fieldName}__}"></p>
+            </th:block>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $("input[name='[[${fieldName}]]").parent().dropdown();
+    </script>
+
+</body>
