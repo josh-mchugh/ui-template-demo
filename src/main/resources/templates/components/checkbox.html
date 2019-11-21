@@ -2,6 +2,7 @@
 <body th:fragment="component (fieldName)"
       th:with="label=${label} ?: '',
                checked=${checked} ?: false,
+               toggle=${toggle} ?: false,
                required=${required} ?: false,
                disabled=${disabled} ?: false,
                readonly=${readonly} ?: false,
@@ -9,7 +10,7 @@
 >
 
     <div th:class="'__${required ? 'required' : ''}__ field __${hasErrors ? 'error' : ''}__'">
-        <div th:class="'ui __${disabled ? 'disabled' : ''}__ __${readonly ? 'read-only' : ''}__ __${checked ? 'checked' : ''}__ checkbox'">
+        <div th:class="'ui __${disabled ? 'disabled' : ''}__ __${readonly ? 'read-only' : ''}__ __${toggle ? 'toggle' : ''}__ __${checked ? 'checked' : ''}__ checkbox'">
             <input type="checkbox" th:name="${fieldName}" th:id="${fieldName}" th:checked="${checked}" th:disabled="${disabled}"/>
             <th:block th:if="${!#strings.isEmpty(label)}">
                 <label th:for="${label}">[[${label}]]</label>

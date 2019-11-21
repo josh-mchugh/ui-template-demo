@@ -6,4 +6,5 @@ import lombok.Data;
 public class TopNavForm {
 
     private String search;
+    private boolean darkMode;
 }
