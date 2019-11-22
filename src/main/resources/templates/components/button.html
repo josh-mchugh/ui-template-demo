@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body th:fragment="component"
+      th:with="text=${text} ?: '',
+               id=${id} ?: '',
+               type=${type} ?: 'submit',
+               fluid=${fluid} ?: false,
+               float=${!#strings.isEmpty(float) ? float + ' floated' : ''},
+               color=${color} ?: '',
+               icon=${icon} ?: '',
+               size=${size} ?: '',
+               action=${action} ?: '',
+               basic=${basic} ?: false,
+               loading=${loading} ?: false,
+               disabled=${disabled} ?: false,
+               inverted=${inverted} ?: false,
+               classes=${classes}
+              "
+>
+
+    <button th:class="'ui __${fluid ? 'fluid' : ''}__ __${size}__ __${float}__ __${basic ? 'basic' : ''}__ __${color}__ __${action}__ __${disabled ? 'disabled' : ''}__ __${loading ? 'loading' : ''}__ __${inverted ? 'inverted' : ''}__ button'"
+            th:classappend="${classes}"
+            th:id="${id}"
+            th:type="${type}"
+    >
+        <th:block th:if="${!#strings.isEmpty(icon)}">
+            <i th:class="'__${icon}__ icon'"></i>
+        </th:block>
+        [[${text}]]
+    </button>
+
+</body>

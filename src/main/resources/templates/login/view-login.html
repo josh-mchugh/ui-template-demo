@@ -20,7 +20,7 @@
                         <div class="ui stacked segment">
                             <div th:replace="components/text-input :: component (fieldName='email', type='email', placeholder='E-mail address', icon='user', iconPosition='left')"></div>
                             <div th:replace="components/text-input :: component (fieldName='password', type='password', placeholder='Password', icon='lock', iconPosition='left')"></div>
-                            <button class="ui fluid large submit button">Login</button>
+                            <div th:replace="components/button :: component(text='Login', fluid=true, size='large')"></div>
                         </div>
                     </form>
 

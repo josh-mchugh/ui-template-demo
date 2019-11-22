@@ -27,7 +27,7 @@
                         <div th:replace="components/checkbox :: component (fieldName='terms', label='I agree to to the Terms and Conditions')"></div>
                         <div th:replace="components/select :: component (fieldName='selectedCountry', label='Single Dropdown', options=${basicExampleForm.countries}, search=true)"></div>
                         <div th:replace="components/select :: component (fieldName='selectedCountries', label='Multiple Dropdown', options=${basicExampleForm.countries}, search=true, multiple=true)"></div>
-                        <button class="ui right floated primary button">Save</button>
+                        <div th:replace="components/button :: component(text='Save', color='primary', float='right')"></div>
                     </form>
                 </div>
             </div>
@@ -57,7 +57,7 @@
                             <div th:replace="components/text-input :: component (fieldName='password', type='password', label='Password', placeholder='Password...')"></div>
                             <div th:replace="components/text-input :: component (fieldName='password', type='password', label='Confirm Password', placeholder='Confirm Password...')"></div>
                         </div>
-                        <button class="ui right floated primary button">Register</button>
+                        <div th:replace="components/button :: component(text='Register', color='primary', float='right')"></div>
                     </form>
                 </div>
             </div>
@@ -76,7 +76,7 @@
                         <div class="inline fields">
                             <div th:replace="components/text-input :: component (fieldName='username', label='Username', placeholder='Username...')"></div>
                             <div th:replace="components/text-input :: component (fieldName='password', type='password', label='Password', placeholder='Password...')"></div>
-                            <button class="ui right floated primary button">Login</button>
+                            <div th:replace="components/button :: component(text='Login', color='primary', float='right')"></div>
                         </div>
                     </form>
                 </div>
@@ -105,21 +105,15 @@
                             <h3 class="ui dividing header">
                                 Loading Button
                             </h3>
-                            <button class="ui loading button">Loading</button>
-                            <button class="ui primary loading button">Loading</button>
+                            <div th:replace="components/button :: component(text='Loading', loading=true)"></div>
+                            <div th:replace="components/button :: component(text='Loading', color='primary', loading=true)"></div>
                         </div>
                         <div style="margin-top: 15px;">
                             <h3 class="ui dividing header">
                                 Icon Button
                             </h3>
-                            <button class="ui button">
-                                <i class="icon user"></i>
-                                Add Friend
-                            </button>
-                            <button class="ui primary button">
-                                <i class="icon user"></i>
-                                Follow
-                            </button>
+                            <div th:replace="components/button :: component(text='Add Friend', icon='user')"></div>
+                            <div th:replace="components/button :: component(text='Follow', color='primary', icon='user')"></div>
                         </div>
                     </form>
                 </div>
@@ -138,7 +132,7 @@
                     <form class="ui form" th:object="${requiredExampleForm}">
                         <div th:replace="components/text-input :: component (fieldName='username', label='Username', placeholder='Username...', required=true)"></div>
                         <div th:replace="components/text-input :: component (fieldName='password', type='password', label='Password', placeholder='Password...', required=true)"></div>
-                        <button class="ui right floated primary button">Login</button>
+                        <div th:replace="components/button :: component(text='Login', color='primary', float='right')"></div>
                     </form>
                 </div>
             </div>
@@ -156,7 +150,7 @@
                     <form class="ui form" th:object="${errorExampleForm}">
                         <div th:replace="components/text-input :: component (fieldName='errorUsername', label='Username', placeholder='Username...', required=true)"></div>
                         <div th:replace="components/text-input :: component (fieldName='errorPassword', type='password', label='Password', placeholder='Password...', required=true)"></div>
-                        <button class="ui right floated primary button">Login</button>
+                        <div th:replace="components/button :: component(text='Login', color='primary', float='right')"></div>
                     </form>
                 </div>
             </div>
