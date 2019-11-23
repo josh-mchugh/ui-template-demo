@@ -8,12 +8,12 @@
 </head>
     <body layout:fragment="main-content">
         <div class="sixteen wide column">
-            <div th:replace="components/header :: component (size='huge', text='Forms')"></div>
+            <div layout:replace="components/header :: component (size='huge', text='Forms')"></div>
         </div>
         <div class="sixteen wide column">
             <div layout:replace="components/segment :: component">
                 <div layout:fragment="title">
-                    <div th:replace="components/header :: component (size='large', dividing=true, text='Basic Form', subHeader='Basic Semantic UI Form layout')"></div>
+                    <div layout:replace="components/header :: component (size='large', dividing=true, text='Basic Form', subHeader='Basic Semantic UI Form layout')"></div>
                 </div>
                 <div layout:fragment="body">
                     <form class="ui form" th:object="${basicExampleForm}">
@@ -33,7 +33,7 @@
         <div class="sixteen wide column">
             <div layout:replace="components/segment :: component">
                 <div layout:fragment="title">
-                    <div th:replace="components/header :: component (size='large', dividing=true, text='Form Row', subHeader='Example for column based form layout')"></div>
+                    <div layout:replace="components/header :: component (size='large', dividing=true, text='Form Row', subHeader='Example for column based form layout')"></div>
                 </div>
                 <div layout:fragment="body">
                     <form class="ui form" th:object="${rowExampleForm}">
@@ -61,7 +61,7 @@
         <div class="sixteen wide column">
             <div layout:replace="components/segment :: component">
                 <div layout:fragment="title">
-                    <div th:replace="components/header :: component (size='large', dividing=true, text='Inline form', subHeader='Example for a Semantic UI inline form')"></div>
+                    <div layout:replace="components/header :: component (size='large', dividing=true, text='Inline form', subHeader='Example for a Semantic UI inline form')"></div>
                 </div>
                 <div layout:fragment="body">
                     <form class="ui form" th:object="${inlineExampleForm}">
@@ -77,7 +77,7 @@
         <div class="sixteen wide column">
             <div layout:replace="components/segment :: component">
                 <div layout:fragment="title">
-                    <div th:replace="components/header :: component (size='large', dividing=true, text='Icon Inputs', subHeader='Input and Button Icons')"></div>
+                    <div layout:replace="components/header :: component (size='large', dividing=true, text='Icon Inputs', subHeader='Input and Button Icons')"></div>
                 </div>
                 <div layout:fragment="body">
                     <form class="ui form" th:object="${iconExampleForm}">
@@ -90,12 +90,12 @@
                             <div th:replace="components/text-input :: component (fieldName='search', label='Right Animated Loading Icon', icon='search', iconPosition='right', placeholder='Search...', loading=true)"></div>
                         </div>
                         <div>
-                            <div th:replace="components/header :: component (size='medium', dividing=true, text='Loading Button')"></div>
+                            <div layout:replace="components/header :: component (size='medium', dividing=true, text='Loading Button')"></div>
                             <div th:replace="components/button :: component(text='Loading', loading=true)"></div>
                             <div th:replace="components/button :: component(text='Loading', color='primary', loading=true)"></div>
                         </div>
                         <div style="margin-top: 15px;">
-                            <div th:replace="components/header :: component (size='medium', dividing=true, text='Icon Button')"></div>
+                            <div layout:replace="components/header :: component (size='medium', dividing=true, text='Icon Button')"></div>
                             <div th:replace="components/button :: component(text='Add Friend', icon='user')"></div>
                             <div th:replace="components/button :: component(text='Follow', color='primary', icon='user')"></div>
                         </div>
@@ -106,7 +106,7 @@
         <div class="sixteen wide column">
             <div layout:replace="components/segment :: component">
                 <div layout:fragment="title">
-                    <div th:replace="components/header :: component (size='large', dividing=true, text='Required Fields', subHeader='Example of Required Fields')"></div>
+                    <div layout:replace="components/header :: component (size='large', dividing=true, text='Required Fields', subHeader='Example of Required Fields')"></div>
                 </div>
                 <div layout:fragment="body">
                     <form class="ui form" th:object="${requiredExampleForm}">
@@ -122,7 +122,7 @@
         <div class="sixteen wide column">
             <div layout:replace="components/segment :: component">
                 <div layout:fragment="title">
-                    <div th:replace="components/header :: component (size='large', dividing=true, text='Form Error', subHeader='Example of Field Error Handling')"></div>
+                    <div layout:replace="components/header :: component (size='large', dividing=true, text='Form Error', subHeader='Example of Field Error Handling')"></div>
                 </div>
                 <div layout:fragment="body">
                     <form class="ui form" th:object="${errorExampleForm}">
@@ -138,7 +138,7 @@
         <div class="sixteen wide column">
             <div layout:replace="components/segment :: component">
                 <div layout:fragment="title">
-                    <div th:replace="components/header :: component (size='large', dividing=true, text='Disabled Fields', subHeader='Example of Disable Fields')"></div>
+                    <div layout:replace="components/header :: component (size='large', dividing=true, text='Disabled Fields', subHeader='Example of Disable Fields')"></div>
                 </div>
                 <div layout:fragment="body">
                     <form class="ui form" th:object="${disabledExampleForm}">
@@ -151,7 +151,7 @@
         <div class="sixteen wide column">
             <div layout:replace="components/segment :: component">
                 <div layout:fragment="title">
-                    <div th:replace="components/header :: component (size='large', dividing=true, text='Read Only Fields', subHeader='Example of Read Only Fields')"></div>
+                    <div layout:replace="components/header :: component (size='large', dividing=true, text='Read Only Fields', subHeader='Example of Read Only Fields')"></div>
                 </div>
                 <div layout:fragment="body">
                     <form class="ui form" th:object="${readOnlyExampleForm}">

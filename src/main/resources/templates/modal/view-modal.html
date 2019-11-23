@@ -8,12 +8,12 @@
     </head>
     <body layout:fragment="main-content">
         <div class="sixteen wide column">
-            <div th:replace="components/header :: component (size='huge', text='Modals')"></div>
+            <div layout:replace="components/header :: component (size='huge', text='Modals')"></div>
         </div>
         <div class="sixteen wide column">
             <div layout:replace="components/segment :: component">
                 <div layout:fragment="title">
-                    <div th:replace="components/header :: component (size='large', dividing=true, text='Modal', subHeader='An example of a modal')"></div>
+                    <div layout:replace="components/header :: component (size='large', dividing=true, text='Modal', subHeader='An example of a modal')"></div>
                 </div>
                 <div layout:fragment="body">
                     <p>A standard Modal</p>
@@ -62,7 +62,7 @@
         <div class="sixteen wide column">
             <div layout:replace="components/segment :: component">
                 <div layout:fragment="title">
-                    <div th:replace="components/header :: component (size='large', dividing=true, text='Basic Modal', subHeader='Example of a basic modal')"></div>
+                    <div layout:replace="components/header :: component (size='large', dividing=true, text='Basic Modal', subHeader='Example of a basic modal')"></div>
                 </div>
                 <div layout:fragment="body">
                     <p>An example of a basic modal</p>

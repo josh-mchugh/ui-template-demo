@@ -8,12 +8,12 @@
     </head>
     <body layout:fragment="main-content">
         <div class="sixteen wide column">
-            <div th:replace="components/header :: component (size='huge', text='Tables')"></div>
+            <div layout:replace="components/header :: component (size='huge', text='Tables')"></div>
         </div>
         <div class="sixteen wide column">
             <div layout:replace="components/segment :: component">
                 <div layout:fragment="title">
-                    <div th:replace="components/header :: component (size='large', dividing=true, text='Users', subHeader='List of users within the company')"></div>
+                    <div layout:replace="components/header :: component (size='large', dividing=true, text='Users', subHeader='List of users within the company')"></div>
                 </div>
                 <div layout:fragment="body">
                     <div class="table content">

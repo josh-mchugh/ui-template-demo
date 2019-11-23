@@ -6,6 +6,7 @@
 1. [X] Create segment Component
    1. [X] Build component
    1. [X] Fix bug with button floats
+1. [X] Actions components to header
 1. [ ] Modal Component
    1. [ ] Build Component
    1. [ ] Universal submission / validation

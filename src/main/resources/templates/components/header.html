@@ -1,5 +1,5 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<body th:fragment="component (size)"
+<body layout:fragment="component (size)"
       th:with="text=${text} ?: '',
                color=${color} ?: '',
                icon=${icon} ?: '',
@@ -23,6 +23,9 @@
                 <div class="sub header">[[${subHeader}]]</div>
             </th:block>
         </div>
+    </div>
+    <div class="options" layout:fragment="options">
+
     </div>
     <th:block th:if="${dividing}">
         <div class="ui divider"></div>
