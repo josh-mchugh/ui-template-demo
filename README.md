@@ -1,7 +1,7 @@
 
 ####Todo
 1. [X] Button Component
-1. [ ] Header Component
+1. [X] Header Component
 1. [ ] Error Message Component
 1. [ ] Create Well Component
    1. [ ] Build component
