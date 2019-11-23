@@ -9,7 +9,8 @@
                clearable=${clearable} ?: false,
                required=${required} ?: false,
                disabled=${disabled} ?: false,
-               hasErrors=${#fields.hasErrors('__${fieldName}__')}"
+               hasErrors=${#fields.hasErrors('__${fieldName}__')}
+              "
 >
 
     <div th:class="'__${required ? 'required' : ''}__ field __${hasErrors ? 'error' : ''}__'">

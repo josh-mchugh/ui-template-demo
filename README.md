@@ -3,9 +3,9 @@
 1. [X] Button Component
 1. [X] Header Component
 1. [X] Error Message Component
-1. [ ] Create segment Component
-   1. [ ] Build component
-   1. [ ] Fix bug with button floats
+1. [X] Create segment Component
+   1. [X] Build component
+   1. [X] Fix bug with button floats
 1. [ ] Modal Component
    1. [ ] Build Component
    1. [ ] Universal submission / validation
