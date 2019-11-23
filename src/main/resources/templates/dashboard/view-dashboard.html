@@ -9,7 +9,7 @@
     </head>
     <body layout:fragment="main-content">
         <div class="sixteen wide column">
-            <h1 class="ui header">Dashboard</h1>
+            <div th:replace="components/header :: component (size='huge', text='Dashboard')"></div>
         </div>
         <div class="four wide column">
             <div class="ui segment">
@@ -46,11 +46,7 @@
         <div class="eight wide column widget">
             <div class="ui segment">
                 <div>
-                    <h2 class="ui header">
-                        Calendar Widget
-                        <div class="sub header">Calendar widget that is displayed on the dashboard screen</div>
-                    </h2>
-                    <div class="ui divider"></div>
+                    <div th:replace="components/header :: component (size='large', dividing=true, text='Calendar Widget', subHeader='Calendar widget that is displayed on the dashboard screen')"></div>
                     <div class="options">
                         <i class="large ellipsis vertical link icon"></i>
                     </div>
@@ -64,11 +60,7 @@
         <div class="eight wide column widget">
             <div class="ui segment">
                 <div>
-                    <h2 class="ui header">
-                        Source / Medium
-                        <div class="sub header">Source / Medium widget of a pie chart and table</div>
-                    </h2>
-                    <div class="ui divider"></div>
+                    <div th:replace="components/header :: component (size='large', dividing=true, text='Source / Medium', subHeader='Source / Medium widget of a pie chart and table')"></div>
                     <div class="options">
                         <i class="large ellipsis vertical link icon"></i>
                     </div>
@@ -107,11 +99,7 @@
         <div class="eight wide column widget">
             <div class="ui segment">
                 <div>
-                    <h2 class="ui header">
-                        Messages Widget
-                        <div class="sub header">Messages widget that is displayed messages</div>
-                    </h2>
-                    <div class="ui divider"></div>
+                    <div th:replace="components/header :: component (size='large', dividing=true, text='Messages Widget', subHeader='Messages widget that is displayed messages')"></div>
                     <div class="options">
                         <i class="large ellipsis vertical link icon"></i>
                     </div>

@@ -1,0 +1,31 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body th:fragment="component (size)"
+      th:with="text=${text} ?: '',
+               color=${color} ?: '',
+               icon=${icon} ?: '',
+               imageUrl=${imageUrl} ?: '',
+               imageClasses=${imageClasses} ?: '',
+               subHeader=${subHeader} ?: '',
+               dividing=${dividing} ?: false,
+               inverted=${inverted} ?: false
+              "
+>
+    <div th:class="'ui __${size}__ __${color}__ __${inverted ? 'inverted' : ''}__ header'">
+        <th:block th:if="${!#strings.isEmpty(icon)}">
+            <i th:class="'__${icon}__ icon'"></i>
+        </th:block>
+        <th:block th:if="${!#strings.isEmpty(imageUrl)}">
+            <img th:class="'ui __${imageClasses}__ image'" th:src="${imageUrl}">
+        </th:block>
+        <div class="content">
+            [[${text}]]
+            <th:block th:if="${!#strings.isEmpty(subHeader)}">
+                <div class="sub header">[[${subHeader}]]</div>
+            </th:block>
+        </div>
+    </div>
+    <th:block th:if="${dividing}">
+        <div class="ui divider"></div>
+    </th:block>
+
+</body>

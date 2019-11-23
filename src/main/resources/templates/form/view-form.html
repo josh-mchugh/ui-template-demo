@@ -8,16 +8,12 @@
 </head>
     <body layout:fragment="main-content">
         <div class="sixteen wide column">
-            <h1 class="ui header">Forms</h1>
+            <div th:replace="components/header :: component (size='huge', text='Forms')"></div>
         </div>
         <div class="sixteen wide column">
             <div class="ui segment well">
                 <div>
-                    <h2 class="ui header">
-                        Basic Form
-                        <div class="sub header">Basic Semantic UI Form layout</div>
-                    </h2>
-                    <div class="ui divider"></div>
+                    <div th:replace="components/header :: component (size='large', dividing=true, text='Basic Form', subHeader='Basic Semantic UI Form layout')"></div>
                 </div>
                 <div class="content">
                     <form class="ui form" th:object="${basicExampleForm}">
@@ -35,11 +31,7 @@
         <div class="sixteen wide column">
             <div class="ui segment well">
                 <div>
-                    <h2 class="ui header">
-                        Form Row
-                        <div class="sub header">Example for column based form layout</div>
-                    </h2>
-                    <div class="ui divider"></div>
+                    <div th:replace="components/header :: component (size='large', dividing=true, text='Form Row', subHeader='Example for column based form layout')"></div>
                 </div>
                 <div class="content">
                     <form class="ui form" th:object="${rowExampleForm}">
@@ -65,11 +57,7 @@
         <div class="sixteen wide column">
             <div class="ui segment well">
                 <div>
-                    <h2 class="ui header">
-                        Inline form
-                        <div class="sub header">Example for a Semantic UI inline form</div>
-                    </h2>
-                    <div class="ui divider"></div>
+                    <div th:replace="components/header :: component (size='large', dividing=true, text='Inline form', subHeader='Example for a Semantic UI inline form')"></div>
                 </div>
                 <div class="content">
                     <form class="ui form" th:object="${inlineExampleForm}">
@@ -85,11 +73,7 @@
         <div class="sixteen wide column">
             <div class="ui segment well">
                 <div>
-                    <h2 class="ui header">
-                        Icon Inputs
-                        <div class="sub header">Input and Button Icons</div>
-                    </h2>
-                    <div class="ui divider"></div>
+                    <div th:replace="components/header :: component (size='large', dividing=true, text='Icon Inputs', subHeader='Input and Button Icons')"></div>
                 </div>
                 <div class="content">
                     <form class="ui form" th:object="${iconExampleForm}">
@@ -122,11 +106,7 @@
         <div class="sixteen wide column">
             <div class="ui segment well">
                 <div>
-                    <h2 class="ui header">
-                        Required Fields
-                        <div  class="sub header">Example of Required Fields</div>
-                    </h2>
-                    <div class="ui divider"></div>
+                    <div th:replace="components/header :: component (size='large', dividing=true, text='Required Fields', subHeader='Example of Required Fields')"></div>
                 </div>
                 <div class="content">
                     <form class="ui form" th:object="${requiredExampleForm}">
@@ -140,11 +120,7 @@
         <div class="sixteen wide column">
             <div class="ui segment well">
                 <div>
-                    <h2 class="ui header">
-                        Form Error
-                        <div class="sub header">Example of Field Error Handling</div>
-                    </h2>
-                    <div class="ui divider"></div>
+                    <div th:replace="components/header :: component (size='large', dividing=true, text='Form Error', subHeader='Example of Field Error Handling')"></div>
                 </div>
                 <div class="content">
                     <form class="ui form" th:object="${errorExampleForm}">
@@ -158,11 +134,7 @@
         <div class="sixteen wide column">
             <div class="ui segment">
                 <div>
-                    <h2 class="ui header">
-                        Disabled Fields
-                        <div class="sub header">Example of Disable Fields</div>
-                    </h2>
-                    <div class="divider"></div>
+                    <div th:replace="components/header :: component (size='large', dividing=true, text='Disabled Fields', subHeader='Example of Disable Fields')"></div>
                 </div>
                 <form class="ui form" th:object="${disabledExampleForm}">
                     <div th:replace="components/text-input :: component (fieldName='firstName', label='First Name', placeholder='First Name...', disabled=true)"></div>
@@ -173,11 +145,7 @@
         <div class="sixteen wide column">
             <div class="ui segment">
                 <div>
-                    <h2 class="ui header">
-                        Read Only Fields
-                        <div class="sub header">Example of Read Only Fields</div>
-                    </h2>
-                    <div class="ui divider"></div>
+                    <div th:replace="components/header :: component (size='large', dividing=true, text='Read Only Fields', subHeader='Example of Read Only Fields')"></div>
                 </div>
                 <form class="ui form" th:object="${readOnlyExampleForm}">
                     <div th:replace="components/text-input :: component (fieldName='firstName', label='First Name', placeholder='First Name...', readonly=true)"></div>

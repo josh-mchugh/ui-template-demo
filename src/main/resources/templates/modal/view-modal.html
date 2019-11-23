@@ -8,20 +8,16 @@
     </head>
     <body layout:fragment="main-content">
         <div class="sixteen wide column">
-            <h1 class="ui header">Modals</h1>
+            <div th:replace="components/header :: component (size='huge', text='Modals')"></div>
         </div>
         <div class="sixteen wide column">
             <div class="ui segment well">
                 <div>
-                    <h2 class="ui header">
-                        Modal
-                        <div class="sub header">An example of a modal</div>
-                    </h2>
-                    <div class="ui divider"></div>
+                    <div th:replace="components/header :: component (size='large', dividing=true, text='Modal', subHeader='An example of a modal')"></div>
                 </div>
                 <div class="content">
                     <p>A standard Modal</p>
-                    <div th:replace="components/button :: component(text='Show Modal', type='button', color='primary', disabled=true, id='showStandardModalBtn')"></div>
+                    <div th:replace="components/button :: component(text='Show Modal', type='button', color='primary', id='showStandardModalBtn')"></div>
                 </div>
                 <div class="ui modal standard-modal">
                     <i class="close icon"></i>
@@ -65,11 +61,7 @@
         <div class="sixteen wide column">
             <div class="ui segment well">
                 <div>
-                    <h2 class="ui header">
-                        Basic Modal
-                        <div class="sub header">Example of a basic modal</div>
-                    </h2>
-                    <div class="ui divider"></div>
+                    <div th:replace="components/header :: component (size='large', dividing=true, text='Basic Modal', subHeader='Example of a basic modal')"></div>
                 </div>
                 <div class="content">
                     <p>An example of a basic modal</p>

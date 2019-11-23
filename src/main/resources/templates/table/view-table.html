@@ -8,16 +8,12 @@
     </head>
     <body layout:fragment="main-content">
         <div class="sixteen wide column">
-            <h1 class="ui header">Tables</h1>
+            <div th:replace="components/header :: component (size='huge', text='Tables')"></div>
         </div>
         <div class="sixteen wide column">
             <div class="ui segment well">
                 <div>
-                    <h2 class="ui header">
-                        Users
-                        <div class="sub header">List of users within the company</div>
-                    </h2>
-                    <div class="ui divider"></div>
+                    <div th:replace="components/header :: component (size='large', dividing=true, text='Users', subHeader='List of users within the company')"></div>
                 </div>
                 <div class="table content">
                     <div class="ui form" th:object="${tableFilterForm}">
