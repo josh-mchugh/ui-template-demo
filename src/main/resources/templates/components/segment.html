@@ -1,0 +1,14 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<body layout:fragment="component"
+      th:with="basic=${basic} ?: false,
+               loading=${loading} ?: false,
+               inverted=${inverted} ?: false
+              "
+>
+
+    <div th:class="'ui __${basic ? 'basic' : ''}__ __${loading ? 'loading' : ''}__ __${inverted ? 'inverted' : ''}__ segment'">
+        <div class="title" layout:fragment="title"></div>
+        <div class="body" layout:fragment="body"></div>
+    </div>
+
+</body>

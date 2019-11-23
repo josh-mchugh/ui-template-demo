@@ -3,7 +3,7 @@
 1. [X] Button Component
 1. [X] Header Component
 1. [X] Error Message Component
-1. [ ] Create Well Component
+1. [ ] Create segment Component
    1. [ ] Build component
    1. [ ] Fix bug with button floats
 1. [ ] Modal Component

@@ -11,373 +11,375 @@
             <div th:replace="components/header :: component (size='huge', text='Tables')"></div>
         </div>
         <div class="sixteen wide column">
-            <div class="ui segment well">
-                <div>
+            <div layout:replace="components/segment :: component">
+                <div layout:fragment="title">
                     <div th:replace="components/header :: component (size='large', dividing=true, text='Users', subHeader='List of users within the company')"></div>
                 </div>
-                <div class="table content">
-                    <div class="ui form" th:object="${tableFilterForm}">
-                        <div class="filters">
-                            <div class="field">
-                                <div th:replace="components/text-input :: component (fieldName='filterQuery', label='Search', placeholder='Search...', icon='search')"></div>
-                            </div>
-                            <div class="field">
-                                <label>Status</label>
-                                <div class="ui divider"></div>
-                                <div class="ui list">
-                                    <div class="item">
-                                        <div th:replace="components/checkbox :: component (fieldName='active', label='Active')"></div>
-                                    </div>
-                                    <div class="item">
-                                        <div th:replace="components/checkbox :: component (fieldName='inactive', label='Inactive')"></div>
-                                    </div>
+                <div layout:fragment="body">
+                    <div class="table content">
+                        <div class="ui form" th:object="${tableFilterForm}">
+                            <div class="filters">
+                                <div class="field">
+                                    <div th:replace="components/text-input :: component (fieldName='filterQuery', label='Search', placeholder='Search...', icon='search')"></div>
                                 </div>
-                            </div>
-                        </div>
-                        <div class="results">
-                            <div class="results-info">
-                                <div class="results-per-page">
-                                    <span class="ui grey text">Results per page:</span>
-                                    <div class="ui inline dropdown">
-                                        <div class="text">10</div>
-                                        <i class="dropdown icon"></i>
-                                        <div class="menu">
-                                            <div class="header">Number of results</div>
-                                            <div class="active item" data-text="10">10</div>
-                                            <div class="item" data-text="20">20</div>
-                                            <div class="item" data-text="50">50</div>
+                                <div class="field">
+                                    <label>Status</label>
+                                    <div class="ui divider"></div>
+                                    <div class="ui list">
+                                        <div class="item">
+                                            <div th:replace="components/checkbox :: component (fieldName='active', label='Active')"></div>
+                                        </div>
+                                        <div class="item">
+                                            <div th:replace="components/checkbox :: component (fieldName='inactive', label='Inactive')"></div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="results-count">
-                                    <span class="ui grey text">10 of 1084 results</span>
-                                </div>
                             </div>
-                            <table class="ui celled table">
-                                <thead>
-                                <tr>
-                                    <th>Username</th>
-                                    <th>Name</th>
-                                    <th>Email</th>
-                                    <th>Last Login</th>
-                                    <th>Status</th>
-                                    <th></th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <tr>
-                                    <td>Savanna Tillman</td>
-                                    <td>Ladarius_Armstrong97</td>
-                                    <td>Jovan7@gmail.com</td>
-                                    <td>2019-11-13</td>
-                                    <td>
-                                        <span class="ui green label">Active</span>
-                                    </td>
-                                    <td class="actions">
-                                        <div class="ui primary buttons">
-                                            <div class="ui button">
-                                                <i class="edit icon"></i>
-                                                Edit
+                            <div class="results">
+                                <div class="results-info">
+                                    <div class="results-per-page">
+                                        <span class="ui grey text">Results per page:</span>
+                                        <div class="ui inline dropdown">
+                                            <div class="text">10</div>
+                                            <i class="dropdown icon"></i>
+                                            <div class="menu">
+                                                <div class="header">Number of results</div>
+                                                <div class="active item" data-text="10">10</div>
+                                                <div class="item" data-text="20">20</div>
+                                                <div class="item" data-text="50">50</div>
                                             </div>
-                                            <div class="ui floating dropdown icon button">
-                                                <i class="dropdown icon"></i>
-                                                <div class="menu">
-                                                    <div class="item">
-                                                        <i class="paper plane icon"></i>
-                                                        Message
-                                                    </div>
-                                                    <div class="item">
-                                                        <i class="delete icon"></i>
-                                                        Deactivate
+                                        </div>
+                                    </div>
+                                    <div class="results-count">
+                                        <span class="ui grey text">10 of 1084 results</span>
+                                    </div>
+                                </div>
+                                <table class="ui celled table">
+                                    <thead>
+                                    <tr>
+                                        <th>Username</th>
+                                        <th>Name</th>
+                                        <th>Email</th>
+                                        <th>Last Login</th>
+                                        <th>Status</th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>Savanna Tillman</td>
+                                        <td>Ladarius_Armstrong97</td>
+                                        <td>Jovan7@gmail.com</td>
+                                        <td>2019-11-13</td>
+                                        <td>
+                                            <span class="ui green label">Active</span>
+                                        </td>
+                                        <td class="actions">
+                                            <div class="ui primary buttons">
+                                                <div class="ui button">
+                                                    <i class="edit icon"></i>
+                                                    Edit
+                                                </div>
+                                                <div class="ui floating dropdown icon button">
+                                                    <i class="dropdown icon"></i>
+                                                    <div class="menu">
+                                                        <div class="item">
+                                                            <i class="paper plane icon"></i>
+                                                            Message
+                                                        </div>
+                                                        <div class="item">
+                                                            <i class="delete icon"></i>
+                                                            Deactivate
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Jasper Johnston</td>
-                                    <td>Taya_Blick</td>
-                                    <td>Annalise.Homenick@hotmail.com</td>
-                                    <td>2019-11-13</td>
-                                    <td>
-                                        <span class="ui green label">Active</span>
-                                    </td>
-                                    <td class="actions">
-                                        <div class="ui primary buttons">
-                                            <div class="ui button">
-                                                <i class="edit icon"></i>
-                                                Edit
-                                            </div>
-                                            <div class="ui floating dropdown icon button">
-                                                <i class="dropdown icon"></i>
-                                                <div class="menu">
-                                                    <div class="item">
-                                                        <i class="paper plane icon"></i>
-                                                        Message
-                                                    </div>
-                                                    <div class="item">
-                                                        <i class="delete icon"></i>
-                                                        Deactivate
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jasper Johnston</td>
+                                        <td>Taya_Blick</td>
+                                        <td>Annalise.Homenick@hotmail.com</td>
+                                        <td>2019-11-13</td>
+                                        <td>
+                                            <span class="ui green label">Active</span>
+                                        </td>
+                                        <td class="actions">
+                                            <div class="ui primary buttons">
+                                                <div class="ui button">
+                                                    <i class="edit icon"></i>
+                                                    Edit
+                                                </div>
+                                                <div class="ui floating dropdown icon button">
+                                                    <i class="dropdown icon"></i>
+                                                    <div class="menu">
+                                                        <div class="item">
+                                                            <i class="paper plane icon"></i>
+                                                            Message
+                                                        </div>
+                                                        <div class="item">
+                                                            <i class="delete icon"></i>
+                                                            Deactivate
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Brielle Zemlak</td>
-                                    <td>Brice16</td>
-                                    <td>Roberto_Moore@gmail.com</td>
-                                    <td>2019-11-12</td>
-                                    <td>
-                                        <span class="ui grey label">Inactive</span>
-                                    </td>
-                                    <td class="actions">
-                                        <div class="ui primary buttons">
-                                            <div class="ui button">
-                                                <i class="edit icon"></i>
-                                                Edit
-                                            </div>
-                                            <div class="ui floating dropdown icon button">
-                                                <i class="dropdown icon"></i>
-                                                <div class="menu">
-                                                    <div class="item">
-                                                        <i class="paper plane icon"></i>
-                                                        Message
-                                                    </div>
-                                                    <div class="item">
-                                                        <i class="delete icon"></i>
-                                                        Deactivate
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Brielle Zemlak</td>
+                                        <td>Brice16</td>
+                                        <td>Roberto_Moore@gmail.com</td>
+                                        <td>2019-11-12</td>
+                                        <td>
+                                            <span class="ui grey label">Inactive</span>
+                                        </td>
+                                        <td class="actions">
+                                            <div class="ui primary buttons">
+                                                <div class="ui button">
+                                                    <i class="edit icon"></i>
+                                                    Edit
+                                                </div>
+                                                <div class="ui floating dropdown icon button">
+                                                    <i class="dropdown icon"></i>
+                                                    <div class="menu">
+                                                        <div class="item">
+                                                            <i class="paper plane icon"></i>
+                                                            Message
+                                                        </div>
+                                                        <div class="item">
+                                                            <i class="delete icon"></i>
+                                                            Deactivate
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Archibald Mann</td>
-                                    <td>Cicero_Jerde</td>
-                                    <td>Chadrick83@gmail.com</td>
-                                    <td>2019-11-13</td>
-                                    <td>
-                                        <span class="ui green label">Active</span>
-                                    </td>
-                                    <td class="actions">
-                                        <div class="ui primary buttons">
-                                            <div class="ui button">
-                                                <i class="edit icon"></i>
-                                                Edit
-                                            </div>
-                                            <div class="ui floating dropdown icon button">
-                                                <i class="dropdown icon"></i>
-                                                <div class="menu">
-                                                    <div class="item">
-                                                        <i class="paper plane icon"></i>
-                                                        Message
-                                                    </div>
-                                                    <div class="item">
-                                                        <i class="delete icon"></i>
-                                                        Deactivate
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Archibald Mann</td>
+                                        <td>Cicero_Jerde</td>
+                                        <td>Chadrick83@gmail.com</td>
+                                        <td>2019-11-13</td>
+                                        <td>
+                                            <span class="ui green label">Active</span>
+                                        </td>
+                                        <td class="actions">
+                                            <div class="ui primary buttons">
+                                                <div class="ui button">
+                                                    <i class="edit icon"></i>
+                                                    Edit
+                                                </div>
+                                                <div class="ui floating dropdown icon button">
+                                                    <i class="dropdown icon"></i>
+                                                    <div class="menu">
+                                                        <div class="item">
+                                                            <i class="paper plane icon"></i>
+                                                            Message
+                                                        </div>
+                                                        <div class="item">
+                                                            <i class="delete icon"></i>
+                                                            Deactivate
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Wendy Mueller</td>
-                                    <td>Magdalen51</td>
-                                    <td>Wilson_Deckow84@yahoo.com</td>
-                                    <td>2019-11-12</td>
-                                    <td>
-                                        <span class="ui grey label">Inactive</span>
-                                    </td>
-                                    <td class="actions">
-                                        <div class="ui primary buttons">
-                                            <div class="ui button">
-                                                <i class="edit icon"></i>
-                                                Edit
-                                            </div>
-                                            <div class="ui floating dropdown icon button">
-                                                <i class="dropdown icon"></i>
-                                                <div class="menu">
-                                                    <div class="item">
-                                                        <i class="paper plane icon"></i>
-                                                        Message
-                                                    </div>
-                                                    <div class="item">
-                                                        <i class="delete icon"></i>
-                                                        Deactivate
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wendy Mueller</td>
+                                        <td>Magdalen51</td>
+                                        <td>Wilson_Deckow84@yahoo.com</td>
+                                        <td>2019-11-12</td>
+                                        <td>
+                                            <span class="ui grey label">Inactive</span>
+                                        </td>
+                                        <td class="actions">
+                                            <div class="ui primary buttons">
+                                                <div class="ui button">
+                                                    <i class="edit icon"></i>
+                                                    Edit
+                                                </div>
+                                                <div class="ui floating dropdown icon button">
+                                                    <i class="dropdown icon"></i>
+                                                    <div class="menu">
+                                                        <div class="item">
+                                                            <i class="paper plane icon"></i>
+                                                            Message
+                                                        </div>
+                                                        <div class="item">
+                                                            <i class="delete icon"></i>
+                                                            Deactivate
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Wendy Mueller</td>
-                                    <td>Magdalen51</td>
-                                    <td>Wilson_Deckow84@yahoo.com</td>
-                                    <td>2019-11-12</td>
-                                    <td>
-                                        <span class="ui grey label">Inactive</span>
-                                    </td>
-                                    <td class="actions">
-                                        <div class="ui primary buttons">
-                                            <div class="ui button">
-                                                <i class="edit icon"></i>
-                                                Edit
-                                            </div>
-                                            <div class="ui floating dropdown icon button">
-                                                <i class="dropdown icon"></i>
-                                                <div class="menu">
-                                                    <div class="item">
-                                                        <i class="paper plane icon"></i>
-                                                        Message
-                                                    </div>
-                                                    <div class="item">
-                                                        <i class="delete icon"></i>
-                                                        Deactivate
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Wendy Mueller</td>
+                                        <td>Magdalen51</td>
+                                        <td>Wilson_Deckow84@yahoo.com</td>
+                                        <td>2019-11-12</td>
+                                        <td>
+                                            <span class="ui grey label">Inactive</span>
+                                        </td>
+                                        <td class="actions">
+                                            <div class="ui primary buttons">
+                                                <div class="ui button">
+                                                    <i class="edit icon"></i>
+                                                    Edit
+                                                </div>
+                                                <div class="ui floating dropdown icon button">
+                                                    <i class="dropdown icon"></i>
+                                                    <div class="menu">
+                                                        <div class="item">
+                                                            <i class="paper plane icon"></i>
+                                                            Message
+                                                        </div>
+                                                        <div class="item">
+                                                            <i class="delete icon"></i>
+                                                            Deactivate
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Rigoberto Funk</td>
-                                    <td>Gladyce_Prosacco37</td>
-                                    <td>Leda.Jacobson43@yahoo.com</td>
-                                    <td>2019-11-13</td>
-                                    <td>
-                                        <span class="ui green label">Active</span>
-                                    </td>
-                                    <td class="actions">
-                                        <div class="ui primary buttons">
-                                            <div class="ui button">
-                                                <i class="edit icon"></i>
-                                                Edit
-                                            </div>
-                                            <div class="ui floating dropdown icon button">
-                                                <i class="dropdown icon"></i>
-                                                <div class="menu">
-                                                    <div class="item">
-                                                        <i class="paper plane icon"></i>
-                                                        Message
-                                                    </div>
-                                                    <div class="item">
-                                                        <i class="delete icon"></i>
-                                                        Deactivate
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Rigoberto Funk</td>
+                                        <td>Gladyce_Prosacco37</td>
+                                        <td>Leda.Jacobson43@yahoo.com</td>
+                                        <td>2019-11-13</td>
+                                        <td>
+                                            <span class="ui green label">Active</span>
+                                        </td>
+                                        <td class="actions">
+                                            <div class="ui primary buttons">
+                                                <div class="ui button">
+                                                    <i class="edit icon"></i>
+                                                    Edit
+                                                </div>
+                                                <div class="ui floating dropdown icon button">
+                                                    <i class="dropdown icon"></i>
+                                                    <div class="menu">
+                                                        <div class="item">
+                                                            <i class="paper plane icon"></i>
+                                                            Message
+                                                        </div>
+                                                        <div class="item">
+                                                            <i class="delete icon"></i>
+                                                            Deactivate
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Maya Considine</td>
-                                    <td>Belle_Stamm83</td>
-                                    <td>Abbie_Connelly@yahoo.com</td>
-                                    <td>2019-11-12</td>
-                                    <td>
-                                        <span class="ui grey label">Inactive</span>
-                                    </td>
-                                    <td class="actions">
-                                        <div class="ui primary buttons">
-                                            <div class="ui button">
-                                                <i class="edit icon"></i>
-                                                Edit
-                                            </div>
-                                            <div class="ui floating dropdown icon button">
-                                                <i class="dropdown icon"></i>
-                                                <div class="menu">
-                                                    <div class="item">
-                                                        <i class="paper plane icon"></i>
-                                                        Message
-                                                    </div>
-                                                    <div class="item">
-                                                        <i class="delete icon"></i>
-                                                        Deactivate
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Maya Considine</td>
+                                        <td>Belle_Stamm83</td>
+                                        <td>Abbie_Connelly@yahoo.com</td>
+                                        <td>2019-11-12</td>
+                                        <td>
+                                            <span class="ui grey label">Inactive</span>
+                                        </td>
+                                        <td class="actions">
+                                            <div class="ui primary buttons">
+                                                <div class="ui button">
+                                                    <i class="edit icon"></i>
+                                                    Edit
+                                                </div>
+                                                <div class="ui floating dropdown icon button">
+                                                    <i class="dropdown icon"></i>
+                                                    <div class="menu">
+                                                        <div class="item">
+                                                            <i class="paper plane icon"></i>
+                                                            Message
+                                                        </div>
+                                                        <div class="item">
+                                                            <i class="delete icon"></i>
+                                                            Deactivate
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Ollie Grimes</td>
-                                    <td>Osvaldo.Wuckert</td>
-                                    <td>Vincenzo_Watsica42@gmail.com</td>
-                                    <td>2019-11-13</td>
-                                    <td>
-                                        <span class="ui green label">Active</span>
-                                    </td>
-                                    <td class="actions">
-                                        <div class="ui primary buttons">
-                                            <div class="ui button">
-                                                <i class="edit icon"></i>
-                                                Edit
-                                            </div>
-                                            <div class="ui floating dropdown icon button">
-                                                <i class="dropdown icon"></i>
-                                                <div class="menu">
-                                                    <div class="item">
-                                                        <i class="paper plane icon"></i>
-                                                        Message
-                                                    </div>
-                                                    <div class="item">
-                                                        <i class="delete icon"></i>
-                                                        Deactivate
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Ollie Grimes</td>
+                                        <td>Osvaldo.Wuckert</td>
+                                        <td>Vincenzo_Watsica42@gmail.com</td>
+                                        <td>2019-11-13</td>
+                                        <td>
+                                            <span class="ui green label">Active</span>
+                                        </td>
+                                        <td class="actions">
+                                            <div class="ui primary buttons">
+                                                <div class="ui button">
+                                                    <i class="edit icon"></i>
+                                                    Edit
+                                                </div>
+                                                <div class="ui floating dropdown icon button">
+                                                    <i class="dropdown icon"></i>
+                                                    <div class="menu">
+                                                        <div class="item">
+                                                            <i class="paper plane icon"></i>
+                                                            Message
+                                                        </div>
+                                                        <div class="item">
+                                                            <i class="delete icon"></i>
+                                                            Deactivate
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>Retha Keebler</td>
-                                    <td>Dedrick_Sanford30</td>
-                                    <td>Leone29@yahoo.com</td>
-                                    <td>2019-11-13</td>
-                                    <td>
-                                        <span class="ui green label">Active</span>
-                                    </td>
-                                    <td class="actions">
-                                        <div class="ui primary buttons">
-                                            <div class="ui button">
-                                                <i class="edit icon"></i>
-                                                Edit
-                                            </div>
-                                            <div class="ui floating dropdown icon button">
-                                                <i class="dropdown icon"></i>
-                                                <div class="menu">
-                                                    <div class="item">
-                                                        <i class="paper plane icon"></i>
-                                                        Message
-                                                    </div>
-                                                    <div class="item">
-                                                        <i class="delete icon"></i>
-                                                        Deactivate
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Retha Keebler</td>
+                                        <td>Dedrick_Sanford30</td>
+                                        <td>Leone29@yahoo.com</td>
+                                        <td>2019-11-13</td>
+                                        <td>
+                                            <span class="ui green label">Active</span>
+                                        </td>
+                                        <td class="actions">
+                                            <div class="ui primary buttons">
+                                                <div class="ui button">
+                                                    <i class="edit icon"></i>
+                                                    Edit
+                                                </div>
+                                                <div class="ui floating dropdown icon button">
+                                                    <i class="dropdown icon"></i>
+                                                    <div class="menu">
+                                                        <div class="item">
+                                                            <i class="paper plane icon"></i>
+                                                            Message
+                                                        </div>
+                                                        <div class="item">
+                                                            <i class="delete icon"></i>
+                                                            Deactivate
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                </tbody>
-                            </table>
-                            <div class="ui right floated pagination menu">
-                                <a class="icon item">
-                                    <i class="left chevron icon"></i>
-                                </a>
-                                <a class="item active">1</a>
-                                <a class="item">2</a>
-                                <a class="item">3</a>
-                                <a class="item">4</a>
-                                <a class="icon item">
-                                    <i class="right chevron icon"></i>
-                                </a>
+                                        </td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <div class="ui right floated pagination menu">
+                                    <a class="icon item">
+                                        <i class="left chevron icon"></i>
+                                    </a>
+                                    <a class="item active">1</a>
+                                    <a class="item">2</a>
+                                    <a class="item">3</a>
+                                    <a class="item">4</a>
+                                    <a class="icon item">
+                                        <i class="right chevron icon"></i>
+                                    </a>
+                                </div>
                             </div>
                         </div>
                     </div>

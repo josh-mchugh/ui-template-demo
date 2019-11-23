@@ -11,14 +11,15 @@
             <div th:replace="components/header :: component (size='huge', text='Modals')"></div>
         </div>
         <div class="sixteen wide column">
-            <div class="ui segment well">
-                <div>
+            <div layout:replace="components/segment :: component">
+                <div layout:fragment="title">
                     <div th:replace="components/header :: component (size='large', dividing=true, text='Modal', subHeader='An example of a modal')"></div>
                 </div>
-                <div class="content">
+                <div layout:fragment="body">
                     <p>A standard Modal</p>
                     <div th:replace="components/button :: component(text='Show Modal', type='button', color='primary', id='showStandardModalBtn')"></div>
                 </div>
+                <!-- TODO: Replace with Modal Template -->
                 <div class="ui modal standard-modal">
                     <i class="close icon"></i>
                     <div class="header">
@@ -59,14 +60,15 @@
             </div>
         </div>
         <div class="sixteen wide column">
-            <div class="ui segment well">
-                <div>
+            <div layout:replace="components/segment :: component">
+                <div layout:fragment="title">
                     <div th:replace="components/header :: component (size='large', dividing=true, text='Basic Modal', subHeader='Example of a basic modal')"></div>
                 </div>
-                <div class="content">
+                <div layout:fragment="body">
                     <p>An example of a basic modal</p>
                     <div th:replace="components/button :: component(text='Show Basic Modal', type='button', color='primary', id='showBasicModalBtn')"></div>
                 </div>
+                <!-- TODO: Replace with Modal Template -->
                 <div class="ui basic tiny modal basic-modal">
                     <div class="ui icon header">
                         <i class="history icon"></i>

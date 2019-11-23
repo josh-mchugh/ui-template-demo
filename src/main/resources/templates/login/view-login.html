@@ -17,10 +17,12 @@
                         </div>
                     </h2>
                     <form class="ui large form" method="POST" action="/" th:object="${form}">
-                        <div class="ui stacked segment">
-                            <div th:replace="components/text-input :: component (fieldName='email', type='email', placeholder='E-mail address', icon='user', iconPosition='left')"></div>
-                            <div th:replace="components/text-input :: component (fieldName='password', type='password', placeholder='Password', icon='lock', iconPosition='left')"></div>
-                            <div th:replace="components/button :: component(text='Login', fluid=true, size='large')"></div>
+                        <div layout:replace="components/segment :: component">
+                            <div layout:fragment="body">
+                                <div th:replace="components/text-input :: component (fieldName='email', type='email', placeholder='E-mail address', icon='user', iconPosition='left')"></div>
+                                <div th:replace="components/text-input :: component (fieldName='password', type='password', placeholder='Password', icon='lock', iconPosition='left')"></div>
+                                <div th:replace="components/button :: component(text='Login', fluid=true, size='large')"></div>
+                            </div>
                         </div>
                     </form>
 
