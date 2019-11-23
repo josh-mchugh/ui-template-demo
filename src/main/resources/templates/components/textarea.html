@@ -15,7 +15,7 @@
         </th:block>
         <textarea th:id="${fieldName}" th:name="${fieldName}" th:rows="${rows}" th:readonly="${readonly}" th:disabled="${disabled}" th:tabindex="${disabled ? '-1' : '0'}">[[${value}]]</textarea>
         <th:block th:if="${hasErrors}">
-            <p class="error" th:errors="*{__${fieldName}__}"></p>
+            <div th:replace="components/error-message :: component (${fieldName})"></div>
         </th:block>
     </div>
 

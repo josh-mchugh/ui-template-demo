@@ -17,7 +17,7 @@
             </th:block>
         </div>
         <th:block th:if="${hasErrors}">
-            <p class="error" th:errors="*{__${fieldName}__}"></p>
+            <div th:replace="components/error-message :: component (${fieldName})"></div>
         </th:block>
     </div>
     <script type="text/javascript">

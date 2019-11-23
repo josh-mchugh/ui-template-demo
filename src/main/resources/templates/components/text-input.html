@@ -24,7 +24,7 @@
             <input th:type="${type}" th:placeholder="${placeholder}" th:field="*{__${fieldName}__}" th:readonly="${readonly}" th:disabled="${disabled}" th:tabindex="${disabled} ? -1 : 0">
         </div>
         <th:block th:if="${hasErrors}">
-            <p class="error" th:errors="*{__${fieldName}__}"></p>
+            <div th:replace="components/error-message :: component (${fieldName})"></div>
         </th:block>
     </div>
 

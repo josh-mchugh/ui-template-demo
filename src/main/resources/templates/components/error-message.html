@@ -1,0 +1,6 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<body th:fragment="component (fieldName)">
+
+    <p class="error" th:errors="*{__${fieldName}__}"></p>
+
+</body>

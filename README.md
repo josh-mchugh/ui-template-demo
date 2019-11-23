@@ -2,7 +2,7 @@
 ####Todo
 1. [X] Button Component
 1. [X] Header Component
-1. [ ] Error Message Component
+1. [X] Error Message Component
 1. [ ] Create Well Component
    1. [ ] Build component
    1. [ ] Fix bug with button floats
@@ -20,4 +20,5 @@
    1. [ ] Add latest npm fomantic to demo
    1. [ ] Remove npm fomantic from frontend build
    1. [ ] Move custom SCSS into fomantic demo site theme
-   1. [ ] Process to move demo compiled CSS to frontend project 
+   1. [ ] Process to move demo compiled CSS to frontend project
+1. [ ] Controller advice which toggles all components to be inverted 
