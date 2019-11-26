@@ -8,7 +8,7 @@
    1. [X] Fix bug with button floats
 1. [X] Actions components to header
 1. [ ] Modal Component
-   1. [ ] Build Component
+   1. [X] Build Component
    1. [ ] Universal submission / validation
    1. [ ] Universal Response messages / redirects
 1. [ ] Toaster Component

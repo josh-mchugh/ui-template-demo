@@ -21,17 +21,17 @@
 
                 <div class="right menu">
                     <div class="item">
-                        <div th:replace="components/checkbox :: component (fieldName='darkMode', toggle=true, label='Dark Mode')"></div>
+                        <div th:replace="~{components/checkbox :: component (fieldName='darkMode', toggle=true, label='Dark Mode')}"></div>
                     </div>
                     <div class="item">
-                        <div th:replace="components/text-input :: component (fieldName='search', placeholder='Search...', icon='search')"></div>
+                        <div th:replace="~{components/text-input :: component (fieldName='search', placeholder='Search...', icon='search')}"></div>
                     </div>
                     <a class="ui item" href="/">Logout</a>
                 </div>
             </nav>
         </form>
         <nav class="ui left vertical menu side-nav">
-            <div th:replace="components/left-nav"></div>
+            <div th:replace="~{components/left-nav}"></div>
         </nav>
         <div class="ui main-container">
             <div class="ui padded stackable grid">

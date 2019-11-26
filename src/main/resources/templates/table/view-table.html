@@ -8,29 +8,29 @@
     </head>
     <body layout:fragment="main-content">
         <div class="sixteen wide column">
-            <div layout:replace="components/header :: component (size='huge', text='Tables')"></div>
+            <div layout:replace="~{components/header :: component (size='huge', text='Tables')}"></div>
         </div>
         <div class="sixteen wide column">
-            <div layout:replace="components/segment :: component">
+            <div layout:replace="~{components/segment :: component}">
                 <div layout:fragment="title">
-                    <div layout:replace="components/header :: component (size='large', dividing=true, text='Users', subHeader='List of users within the company')"></div>
+                    <div layout:replace="~{components/header :: component (size='large', dividing=true, text='Users', subHeader='List of users within the company')}"></div>
                 </div>
                 <div layout:fragment="body">
                     <div class="table content">
                         <div class="ui form" th:object="${tableFilterForm}">
                             <div class="filters">
                                 <div class="field">
-                                    <div th:replace="components/text-input :: component (fieldName='filterQuery', label='Search', placeholder='Search...', icon='search')"></div>
+                                    <div th:replace="~{components/text-input :: component (fieldName='filterQuery', label='Search', placeholder='Search...', icon='search')}"></div>
                                 </div>
                                 <div class="field">
                                     <label>Status</label>
                                     <div class="ui divider"></div>
                                     <div class="ui list">
                                         <div class="item">
-                                            <div th:replace="components/checkbox :: component (fieldName='active', label='Active')"></div>
+                                            <div th:replace="~{components/checkbox :: component (fieldName='active', label='Active')}"></div>
                                         </div>
                                         <div class="item">
-                                            <div th:replace="components/checkbox :: component (fieldName='inactive', label='Inactive')"></div>
+                                            <div th:replace="~{components/checkbox :: component (fieldName='inactive', label='Inactive')}"></div>
                                         </div>
                                     </div>
                                 </div>

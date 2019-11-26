@@ -9,10 +9,10 @@
     </head>
     <body layout:fragment="main-content">
         <div class="sixteen wide column">
-            <div layout:replace="components/header :: component (size='huge', text='Dashboard')"></div>
+            <div layout:replace="~{components/header :: component (size='huge', text='Dashboard')}"></div>
         </div>
         <div class="four wide column">
-            <div layout:replace="components/segment :: component">
+            <div layout:replace="~{components/segment :: component}">
                 <div layout:fragment="body">
                     <div class="ui small statistic">
                         <div class="value">4.56</div>
@@ -22,7 +22,7 @@
             </div>
         </div>
         <div class="four wide column">
-            <div layout:replace="components/segment :: component">
+            <div layout:replace="~{components/segment :: component}">
                 <div layout:fragment="body">
                     <div class="ui small statistic">
                         <div class="value">$29.20</div>
@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="four wide column">
-            <div layout:replace="components/segment :: component">
+            <div layout:replace="~{components/segment :: component}">
                 <div layout:fragment="body">
                     <div class="ui small statistic">
                         <div class="value">67</div>
@@ -42,7 +42,7 @@
             </div>
         </div>
         <div class="four wide column">
-            <div layout:replace="components/segment :: component">
+            <div layout:replace="~{components/segment :: component}">
                 <div layout:fragment="body">
                     <div class="ui small statistic">
                         <div class="value">$49.40</div>
@@ -52,9 +52,9 @@
             </div>
         </div>
         <div class="eight wide column widget">
-            <div layout:replace="components/segment :: component">
+            <div layout:replace="~{components/segment :: component}">
                 <div layout:fragment="title">
-                    <div layout:replace="components/header :: component (size='large', dividing=true, text='Calendar Widget', subHeader='Calendar widget that is displayed on the dashboard screen')">
+                    <div layout:replace="~{components/header :: component (size='large', dividing=true, text='Calendar Widget', subHeader='Calendar widget that is displayed on the dashboard screen')}">
                         <div layout:fragment="options">
                             <i class="large ellipsis vertical link icon"></i>
                         </div>
@@ -69,9 +69,9 @@
             </div>
         </div>
         <div class="eight wide column widget">
-            <div layout:replace="components/segment :: component">
+            <div layout:replace="~{components/segment :: component}">
                 <div layout:fragment="title">
-                    <div layout:replace="components/header :: component (size='large', dividing=true, text='Source / Medium', subHeader='Source / Medium widget of a pie chart and table')">
+                    <div layout:replace="~{components/header :: component (size='large', dividing=true, text='Source / Medium', subHeader='Source / Medium widget of a pie chart and table')}">
                         <div layout:fragment="options">
                             <i class="large ellipsis vertical link icon"></i>
                         </div>
@@ -111,9 +111,9 @@
             </div>
         </div>
         <div class="eight wide column widget">
-            <div layout:replace="components/segment :: component">
+            <div layout:replace="~{components/segment :: component}">
                 <div layout:fragment="title">
-                    <div layout:replace="components/header :: component (size='large', dividing=true, text='Messages Widget', subHeader='Messages widget that is displayed messages')">
+                    <div layout:replace="~{components/header :: component (size='large', dividing=true, text='Messages Widget', subHeader='Messages widget that is displayed messages')}">
                         <div layout:fragment="options">
                             <i class="large ellipsis vertical link icon"></i>
                         </div>
