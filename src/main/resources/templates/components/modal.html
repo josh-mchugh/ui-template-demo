@@ -1,18 +1,7 @@
 <html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
-<body layout:fragment="component"
-      th:with="size=${size} ?: '',
-               inverted=${inverted} ?: false
-              "
->
-
-    <div th:class="'ui __${size}__ __${inverted ? 'inverted' : ''}__ modal'">
-        <i class="close icon"></i>
-        <div class="header" layout:fragment="header"></div>
-        <div class="content">
-            <div class="description" layout:fragment="content"></div>
-        </div>
-        <div class="actions" layout:fragment="actions"></div>
-    </div>
+<body layout:fragment="component">
+    <i class="close icon"></i>
+    <div class="header" layout:fragment="header"></div>
+    <div class="content" layout:fragment="content"></div>
     <script type="text/javascript" layout:fragment="scripts"></script>
-
 </body>

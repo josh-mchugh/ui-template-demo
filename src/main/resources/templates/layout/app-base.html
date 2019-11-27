@@ -18,7 +18,6 @@
                     <img class="logo" src="/assets/logo.svg"/>
                     <span class="company-name">Black Mesa</span>
                 </a>
-
                 <div class="right menu">
                     <div class="item">
                         <div th:replace="~{components/checkbox :: component (fieldName='darkMode', toggle=true, label='Dark Mode')}"></div>
@@ -38,7 +37,12 @@
                 <div layout:fragment="main-content"></div>
             </div>
         </div>
-        <!-- sidebar javascript -->
+        <!--/* Modal Container */-->
+        <!--/* TODO: logic to add the inverted class */-->
+        <div id="modalContainer" class="ui modal"></div>
+        <!--/* Script fragment */-->
+        <script type="text/javascript" layout:fragment="scripts"></script>
+        <!--/* Sidebar */-->
         <script type="text/javascript">
             $(function() {
 
@@ -59,7 +63,7 @@
                 });
             });
         </script>
-        <!-- Dark Mode Toggle -->
+        <!--/* Dark Mode Toggle */-->
         <script type="text/javascript">
             $(function() {
 
@@ -87,6 +91,57 @@
                     onUnchecked: function() {
                         $(invertableClasses.join()).removeClass("inverted");
                     }
+                });
+            });
+        </script>
+        <!--/* Modal Script */-->
+        <script type="text/javascript">
+            $(function() {
+                // Trigger modal listener
+                $(document).on("click", "[data-modal-url]", function() {
+
+                    var modalContainer = $("#modalContainer");
+                    var url = $(this).attr("data-modal-url");
+                    var size = $(this).attr("data-modal-size");
+
+
+                    if(size) {
+                        $(modalContainer).addClass(size);
+                    }
+
+                    $.ajax( {
+                        url: url,
+                        type: "GET"
+                    })
+                    .done(function(res) {
+                        $(modalContainer).html(res);
+                        $(modalContainer).modal("show");
+                    })
+                    .fail(function() {
+                        console.log("Failed to load modal");
+                    });
+                });
+
+                // Modal form submit listener
+                $("#modalContainer").on("submit", "form", function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+
+                    $.ajax( {
+                        url: $(this).attr("action"),
+                        type: $(this).attr("method"),
+                        data: new FormData($(this)[0]),
+                        processData: false,
+                        contentType: false
+                    })
+                    .done(function(res) {
+                        $(modalContainer).html(res);
+                    })
+                    .fail(function() {
+                        console.log("Failed submit form within modal.");
+                    });
+
+                    return false;
                 });
             });
         </script>

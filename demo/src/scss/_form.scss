@@ -9,5 +9,12 @@
                 }
             }
         }
+        .actions {
+            padding-top: 1rem;
+            text-align: right;
+            .button {
+                left-margin: .75em;
+            }
+        }
     }
 }

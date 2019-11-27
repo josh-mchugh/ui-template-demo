@@ -69,16 +69,16 @@
                                     <input type="password" placeholder="Confirm Password..." />
                                 </div>
                             </div>
+                            <div class="actions">
+                                <div class="ui black deny button">
+                                    Cancel
+                                </div>
+                                <div class="ui positive right labeled icon button">
+                                    Register
+                                    <i class="checkmark icon"></i>
+                                </div>
+                            </div>
                         </form>
-                    </div>
-                </div>
-                <div class="actions">
-                    <div class="ui black deny button">
-                        Cancel
-                    </div>
-                    <div class="ui positive right labeled icon button">
-                        Register
-                        <i class="checkmark icon"></i>
                     </div>
                 </div>
             </div>
@@ -104,21 +104,23 @@
                 <p>An example of a basic modal</p>
                 <button class="ui primary button" id="showBasicModalBtn">Show Basic Modal</button>
             </div>
-            <div class="ui basic tiny modal basic-modal">
+            <div class="ui tiny modal basic-modal">
                 <div class="ui icon header">
                     <i class="history icon"></i>
                     Session Expired
                 </div>
                 <div class="content" style="text-align: center;">
-                    <p>Your session has expired, would you like to continue?</p>
-                </div>
-                <div class="actions">
-                    <a class="ui red basic cancel inverted button">
-                        Cancel
-                    </a>
-                    <div class="ui green ok inverted button">
-                        Continue
-                    </div>
+                    <form class="ui form">
+                        <p>Your session has expired, would you like to continue?</p>
+                        <div class="actions">
+                            <a class="ui red cancel button">
+                                Cancel
+                            </a>
+                            <div class="ui green ok button">
+                                Continue
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
             <script type="text/javascript">

@@ -17,43 +17,9 @@
                 </div>
                 <div layout:fragment="body">
                     <p>A standard Modal</p>
-                    <div th:replace="~{components/button :: component(text='Show Modal', type='button', color='primary', id='showStandardModalBtn')}"></div>
+                    <div th:replace="~{components/button :: component(text='Show Modal', type='button', color='primary', modalUrl='/modals/standard-modal')}"></div>
                 </div>
             </div>
-            <div layout:replace="~{components/modal :: component}">
-                <div layout:fragment="header">
-                    Register User
-                </div>
-                <div layout:fragment="content">
-                    <form class="ui form" th:object="${standardModalForm}">
-                        <div th:replace="~{components/text-input :: component (fieldName='username', label='Username', placeholder='Username...')}"></div>
-                        <div class="three fields">
-                            <div th:replace="~{components/text-input :: component (fieldName='firstName', label='First Name', placeholder='First Name...')}"></div>
-                            <div th:replace="~{components/text-input :: component (fieldName='middleName', label='Middle Name', placeholder='Middle Name...')}"></div>
-                            <div th:replace="~{components/text-input :: component (fieldName='lastName', label='Last Name', placeholder='Last Name...')}"></div>
-                        </div>
-                        <div class="two fields">
-                            <div th:replace="~{components/text-input :: component (fieldName='email', type='email', label='Email', placeholder='Email...')}"></div>
-                            <div th:replace="~{components/text-input :: component (fieldName='confirmEmail', type='email', label='Confirm Email', placeholder='Confirm Email...')}"></div>
-                        </div>
-                        <div class="two fields">
-                            <div th:replace="~{components/text-input :: component (fieldName='password', type='password', label='Password', placeholder='Password...')}"></div>
-                            <div th:replace="~{components/text-input :: component (fieldName='confirmEmail', type='password', label='Confirm Password', placeholder='Confirm Password...')}"></div>
-                        </div>
-                    </form>
-                </div>
-                <div layout:fragment="actions">
-                    <div th:replace="~{components/button :: component(text='Cancel', type='button', color='black', action='deny')}"></div>
-                    <div th:replace="~{components/button :: component(text='Register', type='button', color='green', action='positive', icon='checkmark')}"></div>
-                </div>
-            </div>
-            <script type="text/javascript">
-                $(function () {
-                    $("#showStandardModalBtn").on("click", function() {
-                        $(".ui.modal:first").modal("show");
-                    });
-                });
-            </script>
         </div>
         <div class="sixteen wide column">
             <div layout:replace="~{components/segment :: component}">
@@ -62,32 +28,9 @@
                 </div>
                 <div layout:fragment="body">
                     <p>An example of a basic modal</p>
-                    <div th:replace="~{components/button :: component(text='Show Basic Modal', type='button', color='primary', id='showBasicModalBtn')}"></div>
+                    <div th:replace="~{components/button :: component(text='Show Basic Modal', type='button', color='primary', modalUrl='/modals/redirect-modal', modalSize='tiny')}"></div>
                 </div>
             </div>
-            <!-- TODO: Replace with Modal Template -->
-            <div layout:replace="~{components/modal :: component(size='tiny')}">
-                <div layout:fragment="header" th:remove="tag">
-                    <div class="ui icon header">
-                        <i class="history icon"></i>
-                        Session Expired
-                    </div>
-                </div>
-                <div layout:fragment="content">
-                    <p style="text-align: center;">Your session has expired, would you like to continue?</p>
-                </div>
-                <div layout:fragment="actions">
-                    <div th:replace="~{components/button :: component(text='Cancel', type='button', color='red', action='cancel')}"></div>
-                    <div th:replace="~{components/button :: component(text='Continue', type='button', color='green', action='ok')}"></div>
-                </div>
-            </div>
-            <script type="text/javascript">
-                $(function () {
-                    $("#showBasicModalBtn").on("click", function() {
-                        $(".ui.tiny.modal").first().modal("show");
-                    });
-                });
-            </script>
         </div>
     </body>
 </html>

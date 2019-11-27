@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <body>
+        <script type="text/javascript" th:inline="javascript">
+            $(function() {
+
+                $("#modalContainer").modal("hide");
+
+                $("body").toast({
+                    title: [[${title} ?: '']],
+                    message: [[${message} ?: '']],
+                    showProgress: 'bottom',
+                    showIcon: true,
+                    progressUp: true,
+                    class: [[${type} ?: '']],
+                    className: {
+                        box:'toast-box',
+                        title:'header',
+                        icon: 'icon'
+                    },
+                    transition: {
+                        closeEasing: 'easeOutBounce'
+                    }
+                });
+            });
+        </script>
+    </body>
+</html>

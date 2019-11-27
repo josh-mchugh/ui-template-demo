@@ -1,0 +1,28 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<div layout:replace="~{components/modal :: component}">
+    <div layout:fragment="header">
+        Register User
+    </div>
+    <div layout:fragment="content">
+        <form class="ui form" th:method="POST" th:action="@{/modals/standard-modal}" th:object="${form}">
+            <div th:replace="~{components/text-input :: component (fieldName='username', label='Username', placeholder='Username...')}"></div>
+            <div class="three fields">
+                <div th:replace="~{components/text-input :: component (fieldName='firstName', label='First Name', placeholder='First Name...')}"></div>
+                <div th:replace="~{components/text-input :: component (fieldName='middleName', label='Middle Name', placeholder='Middle Name...')}"></div>
+                <div th:replace="~{components/text-input :: component (fieldName='lastName', label='Last Name', placeholder='Last Name...')}"></div>
+            </div>
+            <div class="two fields">
+                <div th:replace="~{components/text-input :: component (fieldName='email', type='email', label='Email', placeholder='Email...')}"></div>
+                <div th:replace="~{components/text-input :: component (fieldName='confirmEmail', type='email', label='Confirm Email', placeholder='Confirm Email...')}"></div>
+            </div>
+            <div class="two fields">
+                <div th:replace="~{components/text-input :: component (fieldName='password', type='password', label='Password', placeholder='Password...')}"></div>
+                <div th:replace="~{components/text-input :: component (fieldName='confirmPassword', type='password', label='Confirm Password', placeholder='Confirm Password...')}"></div>
+            </div>
+            <div class="actions">
+                <div th:replace="~{components/button :: component(text='Cancel', color='black', action='cancel')}"></div>
+                <div th:replace="~{components/button :: component(text='Register', type='submit', color='green', icon='checkmark')}"></div>
+            </div>
+        </form>
+    </div>
+</div>
