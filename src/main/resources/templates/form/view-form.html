@@ -23,7 +23,7 @@
                         <div th:replace="~{components/checkbox :: component (fieldName='terms', label='I agree to to the Terms and Conditions')}"></div>
                         <div th:replace="~{components/select :: component (fieldName='selectedCountry', label='Single Dropdown', options=${basicExampleForm.countries}, search=true)}"></div>
                         <div th:replace="~{components/select :: component (fieldName='selectedCountries', label='Multiple Dropdown', options=${basicExampleForm.countries}, search=true, multiple=true)}"></div>
-                        <div class="btn-group">
+                        <div class="actions">
                             <div th:replace="~{components/button :: component (text='Save', color='primary', float='right')}"></div>
                         </div>
                     </form>
@@ -51,7 +51,7 @@
                             <div th:replace="~{components/text-input :: component (fieldName='password', type='password', label='Password', placeholder='Password...')}"></div>
                             <div th:replace="~{components/text-input :: component (fieldName='password', type='password', label='Confirm Password', placeholder='Confirm Password...')}"></div>
                         </div>
-                        <div class="btn-group">
+                        <div class="actions">
                             <div th:replace="~{components/button :: component(text='Register', color='primary', float='right')}"></div>
                         </div>
                     </form>
@@ -112,7 +112,7 @@
                     <form class="ui form" th:object="${requiredExampleForm}">
                         <div th:replace="~{components/text-input :: component (fieldName='username', label='Username', placeholder='Username...', required=true)}"></div>
                         <div th:replace="~{components/text-input :: component (fieldName='password', type='password', label='Password', placeholder='Password...', required=true)}"></div>
-                        <div class="btn-group">
+                        <div class="actions">
                             <div th:replace="~{components/button :: component(text='Login', color='primary', float='right')}"></div>
                         </div>
                     </form>
@@ -128,7 +128,7 @@
                     <form class="ui form" th:object="${errorExampleForm}">
                         <div th:replace="~{components/text-input :: component (fieldName='errorUsername', label='Username', placeholder='Username...', required=true)}"></div>
                         <div th:replace="~{components/text-input :: component (fieldName='errorPassword', type='password', label='Password', placeholder='Password...', required=true)}"></div>
-                        <div class="btn-group">
+                        <div class="actions">
                             <div th:replace="~{components/button :: component(text='Login', color='primary', float='right')}"></div>
                         </div>
                     </form>
