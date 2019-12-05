@@ -1,7 +1,7 @@
 package com.example.demo.controller.modal;
 
-import com.example.demo.controller.framework.ModalRedirectResponse;
-import com.example.demo.controller.framework.ModalToastResponse;
+import com.example.demo.controller.components.ModalRedirectResponse;
+import com.example.demo.controller.components.ModalToastResponse;
 import com.example.demo.controller.modal.model.StandardModalForm;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

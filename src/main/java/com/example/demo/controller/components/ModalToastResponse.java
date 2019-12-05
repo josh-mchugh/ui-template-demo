@@ -1,4 +1,4 @@
-package com.example.demo.controller.framework;
+package com.example.demo.controller.components;
 
 import org.springframework.ui.Model;
 

@@ -1,0 +1,143 @@
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<body layout:fragment="component(page)"
+    th:with="id=${id} ?: 'default',
+             url=${url} ?: ''
+            "
+>
+
+    <div class="table content" th:attr="data-table-id=${id}">
+        <div class="filters">
+            <div layout:fragment="filter"></div>
+        </div>
+        <div class="results">
+            <div class="results-info">
+                <div class="results-per-page">
+                    <span class="ui grey text">Results per page:</span>
+                    <div class="ui inline dropdown page-size">
+                        <div class="text">[[${page.pageable.getPageSize()}]]</div>
+                        <i class="dropdown icon"></i>
+                        <div class="menu">
+                            <div class="header">Number of results</div>
+                            <th:block th:each="pageSize: ${page.pageSizes}">
+                                <div class="item" th:classappend="${pageSize == page.pageable.getPageSize() ? 'active' : ''}" th:attr="data-text=${pageSize}">[[${pageSize}]]</div>
+                            </th:block>
+                        </div>
+                    </div>
+                </div>
+                <div class="results-count">
+                    <span class="ui grey text">[[${page.getCurrentOffset()}]] of [[${page.getTotalElements()}]] results</span>
+                </div>
+            </div>
+            <table class="ui sortable celled table">
+                <thead>
+                    <div layout:fragment="head"></div>
+                </thead>
+                <tbody>
+                    <div layout:fragment="body"></div>
+                </tbody>
+            </table>
+            <div class="results-pagination">
+                <div class="ui right floated pagination menu">
+                    <a class="icon item" th:classappend="${page.first ? 'disabled' : ''}" th:attr="data-page-number=${page.getPrevPageNumber()}">
+                        <i class="left chevron icon"></i>
+                    </a>
+                    <th:block th:each="item : ${page.getPaginationItems()}">
+                        <a class="item" th:classappend="${item.active ? 'active' : ''}" th:attr="data-page-number=${item.pageNumber}">[[${item.displayNumber}]]</a>
+                    </th:block>
+                    <a class="icon item" th:classappend="${page.last ? 'disabled' : ''}" th:attr="data-page-number=${page.getNextPageNumber()}">
+                        <i class="right chevron icon"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" layout:fragment="scripts"></script>
+        <script type="text/javascript" th:if="${!#strings.isEmpty(url)}" th:inline="javascript">
+
+            $(function() {
+
+                var container = $("[data-table-id='[(${id})]']");
+                var sizeDropdown = $(container).find(".ui.dropdown.page-size");
+                var paginationItems = $(container).find(".pagination.menu .item:not(.disabled)");
+                var tableHeaders = $(container).find("[data-sort-column]");
+                var form = $(container).find("form:first");
+                var inputFields = $(container).find("input");
+
+                var table = (function() {
+
+                    var config = {
+                        "size": [(${page.pageable.getPageSize()})],
+                        "page": 0,
+                        "sort": [[${page.getCurrentSortValue()}]]
+                    };
+
+                    var formData = function getFormData() {
+                        if(form) {
+                            var formObj = {};
+                            $.each($(form).serializeArray(), function() {
+                                formObj[this.name] = this.value || '';
+                            });
+                            return formObj;
+                        }
+                        return {};
+                    }
+
+                    var update = function(params) {
+                        config = $.extend({}, config, params);
+                        config = $.extend({}, config, formData());
+
+                        $.ajax( {
+                            url: '[(${url})]',
+                            type: "GET",
+                            data: config,
+                        })
+                        .done(function(res) {
+                            $(container).parent().html(res);
+                        })
+                        .fail(function() {
+                            console.log("Failed to load table");
+                        });
+                    };
+
+                    return {
+                        update: update
+                    }
+                })();
+
+                $(sizeDropdown).dropdown({
+                    onChange: function(value){
+                        table.update( { "size": value } );
+                    }
+                });
+
+                $(paginationItems).on("click", function() {
+                    table.update( { "page": $(this).attr("data-page-number") } );
+                });
+
+                $(tableHeaders).on("click", function() {
+                    var column = $(this).attr("data-sort-column");
+                    var direction = $(this).attr("data-sort-direction");
+                    if(direction && direction === "asc") {
+                        direction = "desc";
+                    } else {
+                        direction = "asc";
+                    }
+                    table.update({"sort": column + "," + direction});
+                });
+
+                $(inputFields).on("change", function() {
+                    table.update();
+                });
+
+                $(form).on("submit", function(event) {
+                    event.preventDefault();
+                    event.stopPropagation();
+
+                    table.update({});
+
+                    return false;
+                });
+            });
+        </script>
+    </div>
+
+</body>
