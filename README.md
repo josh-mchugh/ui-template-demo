@@ -21,7 +21,7 @@
    1. [X] Page size selector
    1. [X] Filter content
    1. [X] Sorting
-1. [ ] Replace all "data-*" attributes with thymeleaf extension
+1. [X] Replace all "data-*" attributes with thymeleaf extension
 1. [ ] Add Thymeleaf extension to simplify "th:with" statements
 1. [ ] Replace layout with flex-box 
 1. [ ] Controller advice which toggles all components to be inverted

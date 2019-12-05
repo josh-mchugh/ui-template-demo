@@ -1,4 +1,5 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:data="https://github.com/mxab/thymeleaf-extras-data-attribute">
 <body th:fragment="component"
       th:with="text=${text} ?: '',
                id=${id} ?: '',
@@ -23,7 +24,8 @@
             th:classappend="${classes}"
             th:id="${id}"
             th:type="${type}"
-            th:attr="data-modal-url=${!#strings.isEmpty(modalUrl)} ? ${modalUrl} : null, data-modal-size=${!#strings.isEmpty(modalSize)} ? ${modalSize} : null"
+            data:modal-url="${!#strings.isEmpty(modalUrl)} ? ${modalUrl} : null"
+            data:modal-size="${!#strings.isEmpty(modalSize)} ? ${modalSize} : null"
     >
         <th:block th:if="${!#strings.isEmpty(icon)}">
             <i th:class="'__${icon}__ icon'"></i>

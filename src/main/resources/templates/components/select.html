@@ -1,4 +1,5 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:data="https://github.com/mxab/thymeleaf-extras-data-attribute">
 <body th:fragment="component (fieldName)"
       th:with="label=${label} ?: '',
                value=${value} ?: '',
@@ -23,7 +24,7 @@
             <div class="default text">[[${defaultText}]]</div>
             <div class="menu">
                 <th:block th:each="entry : ${options}">
-                    <div class="item" th:data-value="${entry.key}">[[${entry.value}]]</div>
+                    <div class="item" data:value="${entry.key}">[[${entry.value}]]</div>
                 </th:block>
             </div>
             <th:block th:if="${hasErrors}">

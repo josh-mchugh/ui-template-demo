@@ -1,9 +1,7 @@
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:data="https://github.com/mxab/thymeleaf-extras-data-attribute">
 <body th:fragment="component(text, sortHeader)">
 
-    <th th:class="${sortHeader.sortClass}"
-        th:attr="data-sort-column=${sortHeader.column}, data-sort-direction=${sortHeader.direction}"
-    >
+    <th th:class="${sortHeader.sortClass}" data:sort-column="${sortHeader.column}" data:sort-direction="${sortHeader.direction}">
         [[${text}]]
     </th>
 

@@ -1,11 +1,13 @@
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:data="https://github.com/mxab/thymeleaf-extras-data-attribute">
 <body layout:fragment="component(page)"
     th:with="id=${id} ?: 'default',
              url=${url} ?: ''
             "
 >
 
-    <div class="table content" th:attr="data-table-id=${id}">
+    <div class="table content" data:table-id="${id}">
         <div class="filters">
             <div layout:fragment="filter"></div>
         </div>
@@ -19,7 +21,9 @@
                         <div class="menu">
                             <div class="header">Number of results</div>
                             <th:block th:each="pageSize: ${page.pageSizes}">
-                                <div class="item" th:classappend="${pageSize == page.pageable.getPageSize() ? 'active' : ''}" th:attr="data-text=${pageSize}">[[${pageSize}]]</div>
+                                <div class="item" th:classappend="${pageSize == page.pageable.getPageSize() ? 'active' : ''}" data:text="${pageSize}">
+                                    [[${pageSize}]]
+                                </div>
                             </th:block>
                         </div>
                     </div>
@@ -38,13 +42,15 @@
             </table>
             <div class="results-pagination">
                 <div class="ui right floated pagination menu">
-                    <a class="icon item" th:classappend="${page.first ? 'disabled' : ''}" th:attr="data-page-number=${page.getPrevPageNumber()}">
+                    <a class="icon item" th:classappend="${page.first ? 'disabled' : ''}" data:page-number="${page.getPrevPageNumber()}">
                         <i class="left chevron icon"></i>
                     </a>
                     <th:block th:each="item : ${page.getPaginationItems()}">
-                        <a class="item" th:classappend="${item.active ? 'active' : ''}" th:attr="data-page-number=${item.pageNumber}">[[${item.displayNumber}]]</a>
+                        <a class="item" th:classappend="${item.active ? 'active' : ''}" data:page-number="${item.pageNumber}">
+                            [[${item.displayNumber}]]
+                        </a>
                     </th:block>
-                    <a class="icon item" th:classappend="${page.last ? 'disabled' : ''}" th:attr="data-page-number=${page.getNextPageNumber()}">
+                    <a class="icon item" th:classappend="${page.last ? 'disabled' : ''}" data:page-number="${page.getNextPageNumber()}">
                         <i class="right chevron icon"></i>
                     </a>
                 </div>
