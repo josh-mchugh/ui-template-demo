@@ -60,7 +60,7 @@
                 var paginationItems = $(container).find(".pagination.menu .item:not(.disabled)");
                 var tableHeaders = $(container).find("[data-sort-column]");
                 var form = $(container).find("form:first");
-                var inputFields = $(container).find("input");
+                var formCheckboxes = $(container).find("input");
 
                 var table = (function() {
 
@@ -124,7 +124,7 @@
                     table.update({"sort": column + "," + direction});
                 });
 
-                $(inputFields).on("change", function() {
+                $(formCheckboxes).on("change", function() {
                     table.update();
                 });
 
