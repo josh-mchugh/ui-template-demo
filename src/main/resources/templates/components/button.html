@@ -1,24 +1,23 @@
 <html xmlns:th="http://www.thymeleaf.org"
-      xmlns:data="https://github.com/mxab/thymeleaf-extras-data-attribute">
+      xmlns:data="https://github.com/mxab/thymeleaf-extras-data-attribute"
+      xmlns:with="http://www.thymeleaf.org/extras/with">
 <body th:fragment="component"
-      th:with="text=${text} ?: '',
-               id=${id} ?: '',
-               type=${type} ?: 'button',
-               fluid=${fluid} ?: false,
-               float=${!#strings.isEmpty(float) ? float + ' floated' : ''},
-               color=${color} ?: '',
-               icon=${icon} ?: '',
-               size=${size} ?: '',
-               action=${action} ?: '',
-               basic=${basic} ?: false,
-               loading=${loading} ?: false,
-               disabled=${disabled} ?: false,
-               inverted=${inverted} ?: false,
-               classes=${classes},
-               modalUrl=${modalUrl} ?: '',
-               modalSize=${modalSize} ?: '',
-              "
->
+      with:text="${text} ?: ''"
+      with:id="${id} ?: ''"
+      with:type="${type} ?: 'button'"
+      with:fluid="${fluid} ?: false"
+      with:float="${!#strings.isEmpty(float) ? float + ' floated' : ''}"
+      with:color="${color} ?: ''"
+      with:icon="${icon} ?: ''"
+      with:size="${size} ?: ''"
+      with:action="${action} ?: ''"
+      with:basic="${basic} ?: false"
+      with:loading="${loading} ?: false"
+      with:disabled="${disabled} ?: false"
+      with:inverted="${inverted} ?: false"
+      with:classes="${classes}"
+      with:modalUrl="${modalUrl} ?: ''"
+      with:modalSize="${modalSize} ?: ''">
 
     <button th:class="'ui __${fluid ? 'fluid' : ''}__ __${size}__ __${float}__ __${basic ? 'basic' : ''}__ __${color}__ __${action}__ __${disabled ? 'disabled' : ''}__ __${loading ? 'loading' : ''}__ __${inverted ? 'inverted' : ''}__ button'"
             th:classappend="${classes}"

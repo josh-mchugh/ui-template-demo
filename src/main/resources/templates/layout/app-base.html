@@ -106,6 +106,8 @@
 
                     if(size) {
                         $(modalContainer).addClass(size);
+                    } else {
+                        $(modalContainer).removeClass("fullscreen mini tiny small large");
                     }
 
                     $.ajax( {

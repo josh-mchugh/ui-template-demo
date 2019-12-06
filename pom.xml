@@ -54,6 +54,11 @@
 			<version>2.0.1</version>
 		</dependency>
 		<dependency>
+			<groupId>ch.mfrey.thymeleaf.extras.with</groupId>
+			<artifactId>thymeleaf-with-dialect</artifactId>
+			<version>3.0.1</version>
+		</dependency>
+		<dependency>
 			<groupId>com.h2database</groupId>
 			<artifactId>h2</artifactId>
 			<scope>runtime</scope>

@@ -2,6 +2,7 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:with="http://www.thymeleaf.org/extras/with"
       layout:decorate="~{layout/app-base}">
 <head>
     <title>Forms</title>
@@ -24,7 +25,7 @@
                         <div th:replace="~{components/select :: component (fieldName='selectedCountry', label='Single Dropdown', options=${basicExampleForm.countries}, search=true)}"></div>
                         <div th:replace="~{components/select :: component (fieldName='selectedCountries', label='Multiple Dropdown', options=${basicExampleForm.countries}, search=true, multiple=true)}"></div>
                         <div class="actions">
-                            <div th:replace="~{components/button :: component (text='Save', color='primary', float='right')}"></div>
+                            <div th:insert="~{components/button :: component}" with:text="Save" with:color="primary" with:float="right" th:remove="tag"></div>
                         </div>
                     </form>
                 </div>
@@ -52,7 +53,7 @@
                             <div th:replace="~{components/text-input :: component (fieldName='password', type='password', label='Confirm Password', placeholder='Confirm Password...')}"></div>
                         </div>
                         <div class="actions">
-                            <div th:replace="~{components/button :: component(text='Register', color='primary', float='right')}"></div>
+                            <div th:insert="~{components/button :: component}" with:text="Register" with:color="primary" with:float="right" th:remove="tag"></div>
                         </div>
                     </form>
                 </div>
@@ -68,7 +69,7 @@
                         <div class="inline fields">
                             <div th:replace="~{components/text-input :: component (fieldName='username', label='Username', placeholder='Username...')}"></div>
                             <div th:replace="~{components/text-input :: component (fieldName='password', type='password', label='Password', placeholder='Password...')}"></div>
-                            <div th:replace="~{components/button :: component(text='Login', color='primary', float='right')}"></div>
+                            <div th:insert="~{components/button :: component}" with:text="Login" with:color="primary" with:float="right" th:remove="tag"></div>
                         </div>
                     </form>
                 </div>
@@ -91,13 +92,13 @@
                         </div>
                         <div>
                             <div layout:replace="~{components/header :: component (size='medium', dividing=true, text='Loading Button')}"></div>
-                            <div th:replace="~{components/button :: component(text='Loading', loading=true)}"></div>
-                            <div th:replace="~{components/button :: component(text='Loading', color='primary', loading=true)}"></div>
+                            <div th:insert="~{components/button :: component}" with:text="Loading" with:loading="true" th:remove="tag"></div>
+                            <div th:insert="~{components/button :: component}" with:text="Loading" with:color="primary" with:loading="true" th:remove="tag"></div>
                         </div>
                         <div style="margin-top: 15px;">
                             <div layout:replace="~{components/header :: component (size='medium', dividing=true, text='Icon Button')}"></div>
-                            <div th:replace="~{components/button :: component(text='Add Friend', icon='user')}"></div>
-                            <div th:replace="~{components/button :: component(text='Follow', color='primary', icon='user')}"></div>
+                            <div th:insert="~{components/button :: component}" with:text="'Add Friend'" with:icon="user" th:remove="tag"></div>
+                            <div th:insert="~{components/button :: component}" with:text="Follow" with:color="primary" with:icon="user" th:remove="tag"></div>
                         </div>
                     </form>
                 </div>
@@ -113,7 +114,7 @@
                         <div th:replace="~{components/text-input :: component (fieldName='username', label='Username', placeholder='Username...', required=true)}"></div>
                         <div th:replace="~{components/text-input :: component (fieldName='password', type='password', label='Password', placeholder='Password...', required=true)}"></div>
                         <div class="actions">
-                            <div th:replace="~{components/button :: component(text='Login', color='primary', float='right')}"></div>
+                            <div th:insert="~{components/button :: component}" with:text="Login" with:color="primary" with:float="right" th:remove="tag"></div>
                         </div>
                     </form>
                 </div>
@@ -129,7 +130,7 @@
                         <div th:replace="~{components/text-input :: component (fieldName='errorUsername', label='Username', placeholder='Username...', required=true)}"></div>
                         <div th:replace="~{components/text-input :: component (fieldName='errorPassword', type='password', label='Password', placeholder='Password...', required=true)}"></div>
                         <div class="actions">
-                            <div th:replace="~{components/button :: component(text='Login', color='primary', float='right')}"></div>
+                            <div th:insert="~{components/button :: component}" with:text="Login" with:color="primary" with:float="right" th:remove="tag"></div>
                         </div>
                     </form>
                 </div>

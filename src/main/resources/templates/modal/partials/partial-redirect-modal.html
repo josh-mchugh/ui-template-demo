@@ -1,4 +1,7 @@
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:with="http://www.thymeleaf.org/extras/with">
 <div layout:replace="~{components/modal :: component}">
     <div layout:fragment="header" th:remove="tag">
         <div class="ui icon header">
@@ -10,8 +13,8 @@
         <form class="ui form" th:method="POST" th:action="@{/modals/redirect-modal}">
             <p style="text-align: center;">Your session has expired, would you like to continue?</p>
             <div class="actions">
-                <div th:replace="~{components/button :: component(text='Cancel', color='red', action='cancel')}"></div>
-                <div th:replace="~{components/button :: component(text='Continue', type='submit', color='green')}"></div>
+                <div th:insert="~{components/button :: component}" with:text="Cancel" with:color="red" with:action="cancel" th:remove="tag"></div>
+                <div th:insert="~{components/button :: component}" with:text="Continue" with:type="submit" with:color="green" th:remove="tag"></div>
             </div>
         </form>
     </div>

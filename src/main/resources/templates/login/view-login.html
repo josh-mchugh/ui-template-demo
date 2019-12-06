@@ -2,6 +2,7 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:with="http://www.thymeleaf.org/extras/with"
       layout:decorate="~{layout/base}">
     <head>
         <title>Login</title>
@@ -21,7 +22,7 @@
                             <div layout:fragment="body">
                                 <div th:replace="~{components/text-input :: component (fieldName='email', type='email', placeholder='E-mail address', icon='user', iconPosition='left')}"></div>
                                 <div th:replace="~{components/text-input :: component (fieldName='password', type='password', placeholder='Password', icon='lock', iconPosition='left')}"></div>
-                                <div th:replace="~{components/button :: component(text='Login', type='submit', fluid=true, size='large')}"></div>
+                                <div th:insert="~{components/button :: component}" with:text="Login" with:type="submit" with:fluid=true with:size="large" th:remove="tag"></div>
                             </div>
                         </div>
                     </form>

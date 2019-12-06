@@ -1,4 +1,7 @@
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:with="http://www.thymeleaf.org/extras/with">
 <div layout:replace="~{components/modal :: component}">
     <div layout:fragment="header">
         Register User
@@ -20,8 +23,8 @@
                 <div th:replace="~{components/text-input :: component (fieldName='confirmPassword', type='password', label='Confirm Password', placeholder='Confirm Password...')}"></div>
             </div>
             <div class="actions">
-                <div th:replace="~{components/button :: component(text='Cancel', color='black', action='cancel')}"></div>
-                <div th:replace="~{components/button :: component(text='Register', type='submit', color='green', icon='checkmark')}"></div>
+                <div th:insert="~{components/button :: component}" with:text="Cancel" with:color="black" with:action="cancel" th:remove="tag"></div>
+                <div th:insert="~{components/button :: component}" with:text="Register" with:type="submit" with:color="green" with:icon="checkmark" th:remove="tag"></div>
             </div>
         </form>
     </div>

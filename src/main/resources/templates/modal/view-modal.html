@@ -2,6 +2,7 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:with="http://www.thymeleaf.org/extras/with"
       layout:decorate="~{layout/app-base}">
     <head>
         <title>Modals</title>
@@ -17,7 +18,7 @@
                 </div>
                 <div layout:fragment="body">
                     <p>A standard Modal</p>
-                    <div th:replace="~{components/button :: component(text='Show Modal', type='button', color='primary', modalUrl='/modals/standard-modal')}"></div>
+                    <div th:insert="~{components/button :: component}" with:text="'Show Modal'" with:type="button" with:color="primary" with:modalUrl="@{/modals/standard-modal}" th:remove="tag"></div>
                 </div>
             </div>
         </div>
@@ -28,7 +29,7 @@
                 </div>
                 <div layout:fragment="body">
                     <p>An example of a basic modal</p>
-                    <div th:replace="~{components/button :: component(text='Show Basic Modal', type='button', color='primary', modalUrl='/modals/redirect-modal', modalSize='tiny')}"></div>
+                    <div th:insert="~{components/button :: component}" with:text="'Show Basic Modal'" with:type="button" with:color="primary" with:modalUrl="@{/modals/redirect-modal}" with:modalSize="tiny" th:remove="tag"></div>
                 </div>
             </div>
         </div>
