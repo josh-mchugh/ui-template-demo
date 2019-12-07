@@ -1,16 +1,17 @@
-<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:with="http://www.thymeleaf.org/extras/with">
 <body layout:fragment="component"
-      th:with="text=${text} ?: '',
-               color=${color} ?: '',
-               icon=${icon} ?: '',
-               size=${size} ?: '',
-               imageUrl=${imageUrl} ?: '',
-               imageClasses=${imageClasses} ?: '',
-               subHeader=${subHeader} ?: '',
-               dividing=${dividing} ?: false,
-               inverted=${inverted} ?: false
-              "
->
+      with:text="${text} ?: ''"
+      with:color="${color} ?: ''"
+      with:icon="${icon} ?: ''"
+      with:size="${size} ?: ''"
+      with:imageUrl="${imageUrl} ?: ''"
+      with:imageClasses="${imageClasses} ?: ''"
+      with:subHeader="${subHeader} ?: ''"
+      with:dividing="${dividing} ?: false"
+      with:inverted="${inverted} ?: false">
+
     <div th:class="'ui __${size}__ __${color}__ __${inverted ? 'inverted' : ''}__ header'">
         <th:block th:if="${!#strings.isEmpty(icon)}">
             <i th:class="'__${icon}__ icon'"></i>

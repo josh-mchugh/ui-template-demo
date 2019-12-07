@@ -2,18 +2,19 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:with="http://www.thymeleaf.org/extras/with"
       layout:decorate="~{layout/app-base}">
     <head>
         <title>Tables</title>
     </head>
     <body layout:fragment="main-content">
         <div class="sixteen wide column">
-            <div layout:replace="~{components/header :: component (size='huge', text='Tables')}"></div>
+            <div layout:insert="~{components/header :: component}" with:size="huge" with:text="Tables" th:replace="tag"></div>
         </div>
         <div class="sixteen wide column">
             <div layout:replace="~{components/segment :: component}">
                 <div layout:fragment="title">
-                    <div layout:replace="~{components/header :: component (size='large', dividing=true, text='Users', subHeader='List of users within the company')}"></div>
+                    <div layout:insert="~{components/header :: component}" with:size="large" with:dividing="true" with:text="'Users'" with:subHeader="'List of users within the company'" th:remove="tag"></div>
                 </div>
                 <div layout:fragment="body">
                     <div th:replace="~{table/partials/partial-user-table :: table(${pageable}, ${form})}"></div>
