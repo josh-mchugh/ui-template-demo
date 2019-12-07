@@ -12,7 +12,7 @@
             <div layout:replace="~{components/header :: component (size='huge', text='Dashboard')}"></div>
         </div>
         <div class="four wide column">
-            <div layout:replace="~{components/segment :: component}">
+            <div layout:insert="~{components/segment :: component}">
                 <div layout:fragment="body">
                     <div class="ui small statistic">
                         <div class="value">4.56</div>
