@@ -1,18 +1,17 @@
 <html xmlns:th="http://www.thymeleaf.org"
-      xmlns:data="https://github.com/mxab/thymeleaf-extras-data-attribute">
+      xmlns:data="https://github.com/mxab/thymeleaf-extras-data-attribute"
+      xmlns:with="http://www.thymeleaf.org/extras/with">
 <body th:fragment="component (fieldName)"
-      th:with="label=${label} ?: '',
-               value=${value} ?: '',
-               options=${options} ?: null,
-               defaultText=${defaultText} ?: '',
-               search=${search} ?: false,
-               multiple=${multiple} ?: false,
-               clearable=${clearable} ?: false,
-               required=${required} ?: false,
-               disabled=${disabled} ?: false,
-               hasErrors=${#fields.hasErrors('__${fieldName}__')}
-              "
->
+      with:label="${label} ?: ''"
+      with:value="${value} ?: ''"
+      with:options="${options} ?: null"
+      with:defaultText="${defaultText} ?: ''"
+      with:search="${search} ?: false"
+      with:multiple="${multiple} ?: false"
+      with:clearable="${clearable} ?: false"
+      with:required="${required} ?: false"
+      with:disabled="${disabled} ?: false"
+      with:hasErrors="${#fields.hasErrors('__${fieldName}__')}">
 
     <div th:class="'__${required ? 'required' : ''}__ field __${hasErrors ? 'error' : ''}__'">
         <th:block th:if="${!#strings.isEmpty(label)}">

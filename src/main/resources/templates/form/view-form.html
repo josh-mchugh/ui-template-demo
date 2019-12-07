@@ -22,10 +22,14 @@
                         <div th:replace="~{components/text-input :: component (fieldName='password', type='password', label='Password', placeholder='Password...')}"></div>
                         <div th:replace="~{components/textarea :: component (fieldName='textArea', label='Text Area', value='This is a text area')}"></div>
                         <div th:replace="~{components/checkbox :: component (fieldName='terms', label='I agree to to the Terms and Conditions')}"></div>
-                        <div th:replace="~{components/select :: component (fieldName='selectedCountry', label='Single Dropdown', options=${basicExampleForm.countries}, search=true)}"></div>
-                        <div th:replace="~{components/select :: component (fieldName='selectedCountries', label='Multiple Dropdown', options=${basicExampleForm.countries}, search=true, multiple=true)}"></div>
+                        <div th:insert="~{components/select :: component ('selectedCountry')}" with:label="'Single Dropdown'" with:options="${basicExampleForm.countries}" with:search="true" th:remove="tag"></div>
+                        <div th:insert="~{components/select :: component('selectedCountries')}" with:label="'Multiple Dropdown'" with:options="${basicExampleForm.countries}" with:search="true" with:multiple="true" th:remove="tag"></div>
                         <div class="actions">
-                            <div th:insert="~{components/button :: component}" with:text="Save" with:color="primary" with:float="right" th:remove="tag"></div>
+                            <div th:insert="~{components/button :: component}" th:remove="tag"
+                                 with:text="Save"
+                                 with:color="primary"
+                                 with:float="right">
+                            </div>
                         </div>
                     </form>
                 </div>
