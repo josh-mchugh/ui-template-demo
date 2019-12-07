@@ -1,11 +1,10 @@
 <html xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      xmlns:data="https://github.com/mxab/thymeleaf-extras-data-attribute">
+      xmlns:data="https://github.com/mxab/thymeleaf-extras-data-attribute"
+      xmlns:with="http://www.thymeleaf.org/extras/with">
 <body layout:fragment="component(page)"
-    th:with="id=${id} ?: 'default',
-             url=${url} ?: ''
-            "
->
+      with:id="${id} ?: 'default'"
+      with:url="${url} ?: ''">
 
     <div class="table content" data:table-id="${id}">
         <div class="filters">

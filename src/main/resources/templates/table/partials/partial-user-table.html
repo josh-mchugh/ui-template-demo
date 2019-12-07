@@ -3,7 +3,7 @@
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
       xmlns:with="http://www.thymeleaf.org/extras/with">
     <body th:fragment="table(pageable, form)">
-        <div layout:replace="~{components/table :: component(page=${pageable}, id='users', url=@{/tables/users})}">
+        <div layout:insert="~{components/table :: component(${pageable})}" with:id="'users'" with:url="@{/tables/users}" th:remove="tag">
             <div layout:fragment="filter" th:remove="tag">
                 <form class="ui form" th:object="${form}">
                     <div th:insert="~{components/text-input :: component ('filterQuery')}" with:label="'Search'" with:placeholder="'Search...'" with:icon="search" th:remove="tag"></div>
