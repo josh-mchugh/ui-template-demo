@@ -24,7 +24,7 @@
                         <div th:insert="~{components/checkbox :: component ('darkMode')}" with:toggle="true" with:label="'Dark Mode'" th:remove="tag"></div>
                     </div>
                     <div class="item">
-                        <div th:replace="~{components/text-input :: component (fieldName='search', placeholder='Search...', icon='search')}"></div>
+                        <div th:insert="~{components/text-input :: component ('search')}" with:placeholder="'Search...'" with:icon="search" th:remove="tag"></div>
                     </div>
                     <a class="ui item" href="/">Logout</a>
                 </div>

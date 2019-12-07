@@ -6,7 +6,7 @@
         <div layout:replace="~{components/table :: component(page=${pageable}, id='users', url=@{/tables/users})}">
             <div layout:fragment="filter" th:remove="tag">
                 <form class="ui form" th:object="${form}">
-                    <div th:replace="~{components/text-input :: component (fieldName='filterQuery', label='Search', placeholder='Search...', icon='search')}"></div>
+                    <div th:insert="~{components/text-input :: component ('filterQuery')}" with:label="'Search'" with:placeholder="'Search...'" with:icon="search" th:remove="tag"></div>
                     <div class="field">
                         <label>Status</label>
                         <div class="ui divider"></div>

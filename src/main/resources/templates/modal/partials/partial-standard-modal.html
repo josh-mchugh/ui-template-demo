@@ -8,19 +8,19 @@
     </div>
     <div layout:fragment="content">
         <form class="ui form" th:method="POST" th:action="@{/modals/standard-modal}" th:object="${form}">
-            <div th:replace="~{components/text-input :: component (fieldName='username', label='Username', placeholder='Username...')}"></div>
+            <div th:insert="~{components/text-input :: component ('username')}" with:label="'Username'" with:placeholder="'Username...'" th:remove="tag"></div>
             <div class="three fields">
-                <div th:replace="~{components/text-input :: component (fieldName='firstName', label='First Name', placeholder='First Name...')}"></div>
-                <div th:replace="~{components/text-input :: component (fieldName='middleName', label='Middle Name', placeholder='Middle Name...')}"></div>
-                <div th:replace="~{components/text-input :: component (fieldName='lastName', label='Last Name', placeholder='Last Name...')}"></div>
+                <div th:insert="~{components/text-input :: component ('firstName')}" with:label="'First Name'" with:placeholder="'First Name...'" th:remove="tag"></div>
+                <div th:insert="~{components/text-input :: component ('middleName')}" with:label="'Middle Name'" with:placeholder="'Middle Name...'" th:remove="tag"></div>
+                <div th:insert="~{components/text-input :: component ('lastName')}" with:label="'Last Name'" with:placeholder="'Last Name...'" th:remove="tag"></div>
             </div>
             <div class="two fields">
-                <div th:replace="~{components/text-input :: component (fieldName='email', type='email', label='Email', placeholder='Email...')}"></div>
-                <div th:replace="~{components/text-input :: component (fieldName='confirmEmail', type='email', label='Confirm Email', placeholder='Confirm Email...')}"></div>
+                <div th:insert="~{components/text-input :: component ('email')}" with:type="email" with:label="Email" with:placeholder="'Email...'" th:remove="tag"></div>
+                <div th:insert="~{components/text-input :: component ('confirmEmail')}" with:type="email" with:label="'Confirm Email'" with:placeholder="'Confirm Email...'" th:remove="tag"></div>
             </div>
             <div class="two fields">
-                <div th:replace="~{components/text-input :: component (fieldName='password', type='password', label='Password', placeholder='Password...')}"></div>
-                <div th:replace="~{components/text-input :: component (fieldName='confirmPassword', type='password', label='Confirm Password', placeholder='Confirm Password...')}"></div>
+                <div th:insert="~{components/text-input :: component ('password')}" with:type="password" with:label="'Password'" with:placeholder="'Password...'" th:remove="tag"></div>
+                <div th:insert="~{components/text-input :: component ('confirmPassword')}" with:type="password" with:label="'Confirm Password'" with:placeholder="'Confirm Password...'" th:remove="tag"></div>
             </div>
             <div class="actions">
                 <div th:insert="~{components/button :: component}" with:text="Cancel" with:color="black" with:action="cancel" th:remove="tag"></div>

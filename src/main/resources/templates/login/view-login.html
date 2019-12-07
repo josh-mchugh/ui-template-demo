@@ -20,8 +20,8 @@
                     <form class="ui large form" method="POST" action="/" th:object="${form}">
                         <div layout:replace="~{components/segment :: component}">
                             <div layout:fragment="body">
-                                <div th:replace="~{components/text-input :: component (fieldName='email', type='email', placeholder='E-mail address', icon='user', iconPosition='left')}"></div>
-                                <div th:replace="~{components/text-input :: component (fieldName='password', type='password', placeholder='Password', icon='lock', iconPosition='left')}"></div>
+                                <div th:insert="~{components/text-input :: component ('email')}" with:type="email" with:placeholder="'E-mail address'" with:icon="user" with:iconPosition="left" th:remove="tag"></div>
+                                <div th:insert="~{components/text-input :: component ('password')}" with:type="password" with:placeholder="'Password'" with:icon="lock" with:iconPosition="left" th:remove="tag"></div>
                                 <div th:insert="~{components/button :: component}" with:text="Login" with:type="submit" with:fluid=true with:size="large" th:remove="tag"></div>
                             </div>
                         </div>

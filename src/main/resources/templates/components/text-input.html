@@ -1,18 +1,17 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:with="http://www.thymeleaf.org/extras/with">
 <body th:fragment="component (fieldName)"
-      th:with="label=${label} ?: '',
-               placeholder=${placeholder} ?: '',
-               icon=${icon} ?: '',
-               iconPosition=${iconPosition} ?: '',
-               value=${value} ?: '',
-               type=${type} ?: 'text',
-               loading=${loading} ?: false,
-               required=${required} ?: false,
-               disabled=${disabled} ?: false,
-               readonly=${readonly} ?: false,
-               hasErrors=${#fields.hasErrors('__${fieldName}__')}
-              "
->
+      with:label="${label} ?: ''"
+      with:placeholder="${placeholder} ?: ''"
+      with:icon="${icon} ?: ''"
+      with:iconPosition="${iconPosition} ?: ''"
+      with:value="${value} ?: ''"
+      with:type="${type} ?: 'text'"
+      with:loading="${loading} ?: false"
+      with:required="${required} ?: false"
+      with:disabled="${disabled} ?: false"
+      with:readonly="${readonly} ?: false"
+      with:hasErrors="${#fields.hasErrors('__${fieldName}__')}">
 
     <div th:class="'__${disabled ? 'disabled' : ''}__ __${required ? 'required' : ''}__ field __${hasErrors ? 'error' : ''}__'">
         <th:block th:if="${!#strings.isEmpty(label)}">

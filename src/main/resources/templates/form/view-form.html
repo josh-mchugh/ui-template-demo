@@ -18,8 +18,8 @@
                 </div>
                 <div layout:fragment="body">
                     <form class="ui form" th:object="${basicExampleForm}">
-                        <div th:replace="~{components/text-input :: component (fieldName='email', type='email', label='Email', placeholder='Email Address...')}"></div>
-                        <div th:replace="~{components/text-input :: component (fieldName='password', type='password', label='Password', placeholder='Password...')}"></div>
+                        <div th:insert="~{components/text-input :: component ('email')}" with:type="email" with:label="'Email'" with:placeholder="'Email Address...'" th:remove="tag"></div>
+                        <div th:insert="~{components/text-input :: component ('password')}" with:type="password" with:label="'Password'" with:placeholder="'Password...'" th:remove="tag"></div>
                         <div th:insert="~{components/textarea :: component ('textArea')}" with:label="'Text Area'" with:value="'This is a text area'" th:remove="tag"></div>
                         <div th:insert="~{components/checkbox :: component ('terms')}" with:label="'I agree to to the Terms and Conditions'" th:remove="tag"></div>
                         <div th:insert="~{components/select :: component ('selectedCountry')}" with:label="'Single Dropdown'" with:options="${basicExampleForm.countries}" with:search="true" th:remove="tag"></div>
@@ -42,19 +42,19 @@
                 </div>
                 <div layout:fragment="body">
                     <form class="ui form" th:object="${rowExampleForm}">
-                        <div th:replace="~{components/text-input :: component (fieldName='username', label='Username', placeholder='Username...')}"></div>
+                        <div th:insert="~{components/text-input :: component ('username')}" with:label="'Username'" with:placeholder="'Username...'" th:remove="tag"></div>
                         <div class="three fields">
-                            <div th:replace="~{components/text-input :: component (fieldName='firstName', label='First Name', placeholder='First Name...')}"></div>
-                            <div th:replace="~{components/text-input :: component (fieldName='middleName', label='Middle Name', placeholder='Middle Name...')}"></div>
-                            <div th:replace="~{components/text-input :: component (fieldName='lastName', label='Last Name', placeholder='Last Name...')}"></div>
+                            <div th:insert="~{components/text-input :: component ('firstName')}" with:label="'First Name'" with:placeholder="'First Name...'" th:remove="tag"></div>
+                            <div th:insert="~{components/text-input :: component ('middleName')}" with:label="'Middle Name'" with:placeholder="'Middle Name...'" th:remove="tag"></div>
+                            <div th:insert="~{components/text-input :: component ('lastName')}" with:label="'Last Name'" with:placeholder="'Last Name...'" th:remove="tag"></div>
                         </div>
                         <div class="two fields">
-                            <div th:replace="~{components/text-input :: component (fieldName='email', type='email', label='Email', placeholder='Email...')}"></div>
-                            <div th:replace="~{components/text-input :: component (fieldName='confirmEmail', type='email', label='Confirm Email', placeholder='Confirm Email...')}"></div>
+                            <div th:insert="~{components/text-input :: component ('email')}" with:type="email" with:label="'Email'" with:placeholder="'Email...'" th:remove="tag"></div>
+                            <div th:insert="~{components/text-input :: component ('confirmEmail')}" with:type="email" with:label="'Confirm Email'" with:placeholder="'Confirm Email...'" th:remove="tag"></div>
                         </div>
                         <div class="two fields">
-                            <div th:replace="~{components/text-input :: component (fieldName='password', type='password', label='Password', placeholder='Password...')}"></div>
-                            <div th:replace="~{components/text-input :: component (fieldName='password', type='password', label='Confirm Password', placeholder='Confirm Password...')}"></div>
+                            <div th:insert="~{components/text-input :: component ('password')}" with:type="password"  with:label="'Password'" with:placeholder="'Password...'" th:remove="tag"></div>
+                            <div th:insert="~{components/text-input :: component ('confirmPassword')}" with:type="password" with:label="'Confirm Password'" with:placeholder="'Confirm Password...'" th:remove="tag"></div>
                         </div>
                         <div class="actions">
                             <div th:insert="~{components/button :: component}" with:text="Register" with:color="primary" with:float="right" th:remove="tag"></div>
@@ -71,8 +71,8 @@
                 <div layout:fragment="body">
                     <form class="ui form" th:object="${inlineExampleForm}">
                         <div class="inline fields">
-                            <div th:replace="~{components/text-input :: component (fieldName='username', label='Username', placeholder='Username...')}"></div>
-                            <div th:replace="~{components/text-input :: component (fieldName='password', type='password', label='Password', placeholder='Password...')}"></div>
+                            <div th:insert="~{components/text-input :: component ('username')}" with:label="'Username'" with:placeholder="'Username...'" th:remove="tag"></div>
+                            <div th:insert="~{components/text-input :: component ('password')}" with:type="password" with:label="Password" with:placeholder="'Password...'" th:remove="tag"></div>
                             <div th:insert="~{components/button :: component}" with:text="Login" with:color="primary" with:float="right" th:remove="tag"></div>
                         </div>
                     </form>
@@ -87,12 +87,12 @@
                 <div layout:fragment="body">
                     <form class="ui form" th:object="${iconExampleForm}">
                         <div class="two fields">
-                            <div th:replace="~{components/text-input :: component (fieldName='search', label='Left Search Icon', icon='search', iconPosition='left', placeholder='Search...')}"></div>
-                            <div th:replace="~{components/text-input :: component (fieldName='search', label='Right Search Icon', icon='search', iconPosition='right', placeholder='Search...')}"></div>
+                            <div th:insert="~{components/text-input :: component ('search')}" with:label="'Left Search Icon'" with:icon="search" with:iconPosition="left" with:placeholder="'Search...'" th:remove="tag"></div>
+                            <div th:insert="~{components/text-input :: component ('search')}" with:label="'Right Search Icon'" with:icon="search" with:iconPosition="right" with:placeholder="'Search...'" th:remove="tag"></div>
                         </div>
                         <div class="two fields">
-                            <div th:replace="~{components/text-input :: component (fieldName='search', label='Left Animated Loading Icon', icon='search', iconPosition='left', placeholder='Search...', loading=true)}"></div>
-                            <div th:replace="~{components/text-input :: component (fieldName='search', label='Right Animated Loading Icon', icon='search', iconPosition='right', placeholder='Search...', loading=true)}"></div>
+                            <div th:insert="~{components/text-input :: component ('search')}" with:label="'Left Animated Loading Icon'" with:icon="search" with:iconPosition="left" with:placeholder="Search..." with:loading="true" th:remove="tag"></div>
+                            <div th:insert="~{components/text-input :: component ('search')}" with:label="'Right Animated Loading Icon'" with:icon="search" with:iconPosition="right" with:placeholder="'Search...'" with:loading="true" th:remove="tag"></div>
                         </div>
                         <div>
                             <div layout:replace="~{components/header :: component (size='medium', dividing=true, text='Loading Button')}"></div>
@@ -115,8 +115,8 @@
                 </div>
                 <div layout:fragment="body">
                     <form class="ui form" th:object="${requiredExampleForm}">
-                        <div th:replace="~{components/text-input :: component (fieldName='username', label='Username', placeholder='Username...', required=true)}"></div>
-                        <div th:replace="~{components/text-input :: component (fieldName='password', type='password', label='Password', placeholder='Password...', required=true)}"></div>
+                        <div th:insert="~{components/text-input :: component ('username')}" with:label="'Username'" with:placeholder="'Username...'" with:required="true" th:remove="tag"></div>
+                        <div th:insert="~{components/text-input :: component ('password')}" with:type="password" with:label="'Password'" with:placeholder="'Password...'" with:required="true" th:remove="tag"></div>
                         <div class="actions">
                             <div th:insert="~{components/button :: component}" with:text="Login" with:color="primary" with:float="right" th:remove="tag"></div>
                         </div>
@@ -131,8 +131,8 @@
                 </div>
                 <div layout:fragment="body">
                     <form class="ui form" th:object="${errorExampleForm}">
-                        <div th:replace="~{components/text-input :: component (fieldName='errorUsername', label='Username', placeholder='Username...', required=true)}"></div>
-                        <div th:replace="~{components/text-input :: component (fieldName='errorPassword', type='password', label='Password', placeholder='Password...', required=true)}"></div>
+                        <div th:insert="~{components/text-input :: component ('errorUsername')}" with:label="'Username'" with:placeholder="'Username...'" with:required="true" th:remove="tag"></div>
+                        <div th:insert="~{components/text-input :: component ('errorPassword')}" with:type="password" with:label="Password" with:placeholder="'Password...'" with:required="true" th:remove="tag"></div>
                         <div class="actions">
                             <div th:insert="~{components/button :: component}" with:text="Login" with:color="primary" with:float="right" th:remove="tag"></div>
                         </div>
@@ -147,8 +147,8 @@
                 </div>
                 <div layout:fragment="body">
                     <form class="ui form" th:object="${disabledExampleForm}">
-                        <div th:replace="~{components/text-input :: component (fieldName='firstName', label='First Name', placeholder='First Name...', disabled=true)}"></div>
-                        <div th:replace="~{components/text-input :: component (fieldName='lastName', label='Last Name', placeholder='Last Name...', disabled=true)}"></div>
+                        <div th:insert="~{components/text-input :: component ('firstName')}" with:label="'First Name'" with:placeholder="'First Name...'" with:disabled="true" th:remove="tag"></div>
+                        <div th:insert="~{components/text-input :: component ('lastName')}" with:label="'Last Name'" with:placeholder="'Last Name...'" with:disabled="true" th:remove="tag"></div>
                     </form>
                 </div>
             </div>
@@ -160,8 +160,8 @@
                 </div>
                 <div layout:fragment="body">
                     <form class="ui form" th:object="${readOnlyExampleForm}">
-                        <div th:replace="~{components/text-input :: component (fieldName='firstName', label='First Name', placeholder='First Name...', readonly=true)}"></div>
-                        <div th:replace="~{components/text-input :: component (fieldName='firstName', label='First Name', placeholder='First Name...', readonly=true)}"></div>
+                        <div th:insert="~{components/text-input :: component ('firstName')}" with:label="'First Name'" with:placeholder="'First Name...'" with:readonly="true" th:remove="tag"></div>
+                        <div th:insert="~{components/text-input :: component ('lastName')}" with:label="'Last Name'" with:placeholder="'Last Name...'" with:readonly="true" th:remove="tag"></div>
                     </form>
                 </div>
             </div>
