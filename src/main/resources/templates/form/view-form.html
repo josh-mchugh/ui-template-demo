@@ -20,7 +20,7 @@
                     <form class="ui form" th:object="${basicExampleForm}">
                         <div th:replace="~{components/text-input :: component (fieldName='email', type='email', label='Email', placeholder='Email Address...')}"></div>
                         <div th:replace="~{components/text-input :: component (fieldName='password', type='password', label='Password', placeholder='Password...')}"></div>
-                        <div th:replace="~{components/textarea :: component (fieldName='textArea', label='Text Area', value='This is a text area')}"></div>
+                        <div th:insert="~{components/textarea :: component ('textArea')}" with:label="'Text Area'" with:value="'This is a text area'" th:remove="tag"></div>
                         <div th:replace="~{components/checkbox :: component (fieldName='terms', label='I agree to to the Terms and Conditions')}"></div>
                         <div th:insert="~{components/select :: component ('selectedCountry')}" with:label="'Single Dropdown'" with:options="${basicExampleForm.countries}" with:search="true" th:remove="tag"></div>
                         <div th:insert="~{components/select :: component('selectedCountries')}" with:label="'Multiple Dropdown'" with:options="${basicExampleForm.countries}" with:search="true" with:multiple="true" th:remove="tag"></div>
