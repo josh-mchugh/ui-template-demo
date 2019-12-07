@@ -1,5 +1,7 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<html lang="en" xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:with="http://www.thymeleaf.org/extras/with">
     <body th:fragment="table(pageable, form)">
         <div layout:replace="~{components/table :: component(page=${pageable}, id='users', url=@{/tables/users})}">
             <div layout:fragment="filter" th:remove="tag">
@@ -10,10 +12,10 @@
                         <div class="ui divider"></div>
                         <div class="ui list">
                             <div class="item">
-                                <div th:replace="~{components/checkbox :: component (fieldName='active', label='Active', checked=${form.active})}"></div>
+                                <div th:insert="~{components/checkbox :: component ('active')}" with:label="'Active'" with:checked="${form.active}" th:remove="tag"></div>
                             </div>
                             <div class="item">
-                                <div th:replace="~{components/checkbox :: component (fieldName='inactive', label='Inactive', checked=${form.inactive})}"></div>
+                                <div th:insert="~{components/checkbox :: component ('inactive')}" with:label="'Inactive'" with:checked="${form.inactive}" th:remove="tag"></div>
                             </div>
                         </div>
                     </div>

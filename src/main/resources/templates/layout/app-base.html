@@ -2,6 +2,7 @@
 <html lang="en"
       xmlns:th="http://www.thymeleaf.org"
       xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      xmlns:with="http://www.thymeleaf.org/extras/with"
       layout:decorate="~{layout/base}">
     <body layout:fragment="body">
         <div class="side-bar">
@@ -20,7 +21,7 @@
                 </a>
                 <div class="right menu">
                     <div class="item">
-                        <div th:replace="~{components/checkbox :: component (fieldName='darkMode', toggle=true, label='Dark Mode')}"></div>
+                        <div th:insert="~{components/checkbox :: component ('darkMode')}" with:toggle="true" with:label="'Dark Mode'" th:remove="tag"></div>
                     </div>
                     <div class="item">
                         <div th:replace="~{components/text-input :: component (fieldName='search', placeholder='Search...', icon='search')}"></div>

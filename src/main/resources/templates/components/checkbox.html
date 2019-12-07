@@ -1,14 +1,13 @@
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:with="http://www.thymeleaf.org/extras/with">
 <body th:fragment="component (fieldName)"
-      th:with="label=${label} ?: '',
-               checked=${checked} ?: false,
-               toggle=${toggle} ?: false,
-               required=${required} ?: false,
-               disabled=${disabled} ?: false,
-               readonly=${readonly} ?: false,
-               hasErrors=${#fields.hasErrors('__${fieldName}__')}
-              "
->
+      with:label="${label} ?: ''"
+      with:checked="${checked} ?: false"
+      with:toggle="${toggle} ?: false"
+      with:required="${required} ?: false"
+      with:disabled="${disabled} ?: false"
+      with:readonly="${readonly} ?: false"
+      with:hasErrors="${#fields.hasErrors('__${fieldName}__')}">
 
     <div th:class="'__${required ? 'required' : ''}__ field __${hasErrors ? 'error' : ''}__'">
         <div th:class="'ui __${disabled ? 'disabled' : ''}__ __${readonly ? 'read-only' : ''}__ __${toggle ? 'toggle' : ''}__ __${checked ? 'checked' : ''}__ checkbox'">
@@ -24,4 +23,5 @@
     <script type="text/javascript">
         $("input[type='checkbox'][name='[[${fieldName}]]']").parent().checkbox();
     </script>
+
 </body>
